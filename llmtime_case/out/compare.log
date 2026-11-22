@@ -1,0 +1,52 @@
+LLMTime case: LLMTime public forecasts vs seasonal naive / statistical baselines (mechanical output)
+python 3.14.2, numpy 2.5.2, pandas 2.3.3
+llmtime root: <data>\llmtime
+darts csv: <data>\darts_csv
+monash dir: None
+stat csv: <repo>\llmtime_case\out\stat_forecasts.csv
+
+== DARTS ==
+MAE definition behind darts_results_agg.csv: identified=median/mean_abs_test; best=median/mean_abs_test (12/12 within 2%); all hits: {'median/mean_abs_test': np.int64(12), 'median/range_full': np.int64(0), 'median/range_train': np.int64(0), 'median/std_test': np.int64(0), 'median/mean_abs_train': np.int64(6), 'samples/mean_abs_test': np.int64(0), 'samples/range_full': np.int64(0), 'samples/range_train': np.int64(0), 'samples/std_test': np.int64(0), 'samples/mean_abs_train': np.int64(0)}
+CRPS formula reproduces reported CRPS: 5/12 -> crps_ok=False; pickle NLL/D equals reported NLL/D: 12/12
+dataset            H    m  md5  G1  G2(match/6)  valid
+AirPassengersDataset   29  12  True  False 0/0         False
+AusBeerDataset         43   4  True  False 0/0         False
+GasRateCO2Dataset      60   1  True  True  6/6         True
+MonthlyMilkDataset     34  12  True  False 0/0         False
+SunspotsDataset       141  33  True  False 0/0         False
+WineDataset            36  12  True  False 0/0         False
+WoolyDataset           24   4  True  False 0/0         False
+HeartRateDataset      180   1  True  True  6/6         True
+valid Darts datasets: 2/8 ['GasRateCO2Dataset', 'HeartRateDataset']
+
+raw-scale MAE of the point forecast (LLM: pickle median; controls: point forecast)
+dataset                       GPT-3          GPT-4 ARIMA(authors)         SNaive          Naive        AutoETS      AutoARIMA      AutoTheta   bestAuthor  SN/GPT3  ETS/GPT3
+AirPassengersDataset            nan            nan            nan        64.7586        81.4483        55.6466        28.5671        20.7192          nan      nan       nan
+AusBeerDataset                  nan            nan            nan        14.2558        96.3488        12.1201        12.7191        37.0227          nan      nan       nan
+GasRateCO2Dataset            3.4958         3.2922         2.3681         2.2900         2.2900         2.2900         2.3253         2.2882       2.2731   0.6551    0.6551
+MonthlyMilkDataset              nan            nan            nan         9.5588        85.7059         9.9001        30.0304        12.6522          nan      nan       nan
+SunspotsDataset                 nan            nan            nan        43.8745        48.2426        48.0706        46.8780        39.8841          nan      nan       nan
+WineDataset                     nan            nan            nan      2246.3333      4075.2778      4026.9571      2061.9803      1910.1855          nan      nan       nan
+WoolyDataset                    nan            nan            nan       824.9167      1210.3333       710.0001       730.9483       716.2748          nan      nan       nan
+HeartRateDataset             6.2111        23.9513         5.5609         5.9192         5.9192         5.9192         5.6693         5.9172       5.4932   0.9530    0.9530
+
+counts written in advance over valid datasets: #(control <= LLM) / #compared   [also r<=1.05, r<=0.95; geomean r]
+P1       SNaive vs GPT-3              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 1/2   geomean r = 0.7901
+S1      AutoETS vs GPT-3              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 1/2   geomean r = 0.7901
+S2a      SNaive vs GPT-4              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 2/2   geomean r = 0.4146
+S2b     AutoETS vs GPT-4              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 2/2   geomean r = 0.4146
+S3a      SNaive vs LLaMA-2 70B(agg)   [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 1/2   geomean r = 0.9400
+S3b     AutoETS vs LLaMA-2 70B(agg)   [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 1/2   geomean r = 0.9400
+S5a      SNaive vs GPT-3              [crps]: 1/2   r<=1.05: 1/2   r<=0.95: 1/2   geomean r = 0.9869
+S5b     AutoETS vs GPT-3              [crps]: 1/2   r<=1.05: 1/2   r<=0.95: 1/2   geomean r = 0.9664
+S5c      SNaive vs LLaMA-2 70B(agg)   [crps]: 0/0   r<=1.05: 0/0   r<=0.95: 0/0   geomean r = nan
+D1        Naive vs GPT-3              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 1/2   geomean r = 0.7901
+D2    AutoARIMA vs GPT-3              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 2/2   geomean r = 0.7792
+D3    AutoTheta vs GPT-3              [mae_raw]: 2/2   r<=1.05: 2/2   r<=0.95: 1/2   geomean r = 0.7897
+S4   GPT-3 lowest MAE vs the authors' 5 baselines: 0 []
+     GPT-3 lowest MAE vs authors' 5 + SNaive + AutoETS: 0 []
+P2   GPT-3 beats ARIMA(authors) on 0 []; of these SNaive <= GPT-3 on 0 []; AutoETS <= GPT-3 on 0 []
+D4   SNaive <= best of 7 pickle LLM variants (oracle, per dataset): 0/2
+
+pickle loader: inert shell used for [] (0 references)
+## refused classes (not loaded; review before allowing): pandas._libs.arrays.__pyx_unpickle_NDArrayBacked

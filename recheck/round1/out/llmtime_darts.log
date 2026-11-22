@@ -1,0 +1,13 @@
+[2026-11-16 17:53:21] === llmtime_darts start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['llmtime-darts', '--out', '<repo>\\recheck\\round1\\out', '--darts-csv-dir', '<data>\\darts_csv', '--llmtime-root', '<data>\\llmtime', '--r12-stat-csv', '<repo>\\llmtime_case\\out\\stat_forecasts.csv']
+[2026-11-16 17:53:21] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-16 17:53:23] AirPassengersDataset   H=29   m=12/12 MAE R1=64.7586 R2=28.1184 GPT-3(rep)=34.3726 r_R2=0.8180 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:53:23] AusBeerDataset         H=43   m=4/4 MAE R1=14.2558 R2=12.6450 GPT-3(rep)=16.1270 r_R2=0.7841 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:53:24] GasRateCO2Dataset      H=60   m=1/1 MAE R1=2.2900 R2=2.2895 GPT-3(rep)=3.4958 r_R2=0.6550 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:53:27] MonthlyMilkDataset     H=34   m=12/12 MAE R1=9.5588 R2=14.2461 GPT-3(rep)=9.6772 r_R2=1.4721 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:53:55] SunspotsDataset        H=141  m=33/24 MAE R1=43.8745 R2=48.0777 GPT-3(rep)=47.3390 r_R2=1.0156 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:53:58] WineDataset            H=36   m=12/12 MAE R1=2246.3333 R2=2212.8739 GPT-3(rep)=1569.3237 r_R2=1.4101 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:53:59] WoolyDataset           H=24   m=4/4 MAE R1=824.9167 R2=719.3976 GPT-3(rep)=808.7309 r_R2=0.8895 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:54:00] HeartRateDataset       H=180  m=1/1 MAE R1=5.9192 R2=5.9145 GPT-3(rep)=6.2111 r_R2=0.9522 mode=median3 stat={'ETS': 'ok', 'Theta': 'ok', 'ARIMA': 'ok'}
+[2026-11-16 17:54:00] SMOKE CHECK darts: datasets with any R2 component not ok: none (criteria: must be none, except possibly SunspotsDataset)
+[2026-11-16 17:54:00] R2 tally [llmtime-darts]: calls=8 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0
+[2026-11-16 17:54:00] wrote llmtime_darts.csv, llmtime_darts_points.csv

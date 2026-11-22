@@ -1,0 +1,24 @@
+system,reference_tier,note
+TimeCopilot,M,
+TimeSeriesScientist,M,
+TSOrchestra,M,
+MoiraiAgent,M,selector confirmed LLM-based from the public code (2026-11-15)
+FASE,M,includes past tool-error records and tool descriptions
+TimeRSI,S,changed M->S on 2026-11-14 after the first (outcome-contaminated) blind pass
+Bridging the Last Mile,S,
+JudgeCast,S,
+MUSE-Bench,S/M/N by arm,
+Beyond Naive Prompting,S (with context) / N (without),
+Nexus,S (Leaf; GIFT-CTX) / N (GIFT-Eval),
+TimEvolve,S,
+LLMTime,N,
+LSTPrompt,M,
+Informed Forecasting,,no reference label recorded before the re-annotation
+Context is Key,S (with context) / N (without),
+Time-R1,M,
+MemCast,S,
+From News to Forecast,S (with news) / N (without),
+FLAIRR-TS,N,
+KairosAgent,M,changed S->M on 2026-11-14 (before the first blind pass)
+CompEvo,S,
+CastFSR,S,future covariates in the public code path; paper text states historical covariates

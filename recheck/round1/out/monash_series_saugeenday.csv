@@ -1,0 +1,2 @@
+dataset,series,n_hist,m_r1_eff,m_r2,mae_r1,mae_naive,mae_r2,r2_mode,mae_ETS,stat_ETS,mae_Theta,stat_Theta,mae_ARIMA,stat_ARIMA
+saugeenday,0,500,7,7,43.6666675567627,21.496667098999023,21.385488345361576,median3,21.409617249275712,ok,21.39216734633259,ok,23.807271461639214,ok

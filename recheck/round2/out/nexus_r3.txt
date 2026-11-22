@@ -1,0 +1,5 @@
+Nexus R3 read-out [criteria §5.4] -- ur_c.py v1 (2026-11-18)
+geometric mean of model / system over 6 columns: Chronos-2 1.1206757676571322  TimesFM-2.5 1.1843876950786287  TiRex 1.1334336968883396
+best single model: Chronos-2 -> r = 1.1206757676571322  P1 (>1.221): False  P2 (>1.10): True
+sensitivity, per-column best pool model (descriptive): r = 1.115521020298798 (['Chronos-2', 'Chronos-2', 'Chronos-2', 'TiRex', 'TiRex', 'TiRex'])
+RMSE columns, same rule (descriptive): best TiRex r = 1.128143393880335

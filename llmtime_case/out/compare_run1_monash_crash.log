@@ -1,0 +1,21 @@
+python.exe : Traceback (most recent call last):
+At line:7 char:1
++ & <python> -I "<repo>\llmtime_case\llmtime_controls.py" compare --llmtime-root "<data>\llm ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "<repo>\llmtime_case\llmtime_controls.py", line 916, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "<repo>\llmtime_case\llmtime_controls.py", line 912, in main
+    return cmd_stats(a) if a.cmd == "stats" else cmd_compare(a)
+                                                 ~~~~~~~~~~~^^^
+  File "<repo>\llmtime_case\llmtime_controls.py", line 886, in cmd_compare
+    monash_block(a, root, out, lines, info)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>\llmtime_case\llmtime_controls.py", line 743, in monash_block
+    maes = np.atleast_1d(np.asarray(ent["maes"], dtype=float))
+                         ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions
+. The detected shape was (19,) + inhomogeneous part.

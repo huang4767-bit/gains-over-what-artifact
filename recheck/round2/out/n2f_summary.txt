@@ -1,0 +1,6 @@
+N2F Electricity (protocol not verified, descriptive) -- ur_c.py v1 (2026-11-18)
+windows 100, points 4800; pooled RMSE (unrounded): R1 488.48701524665245  R2 839.621103346161
+r(R2) = 2.9944759204898928  (P1 True, P2 True; not counted)  r(R1) = 1.742169889249447
+sensitivity [criteria §5.10] R2 native period 48: RMSE 838.2405691478256  r 2.9895522991113292
+R2 tally [N2F R2 primary (season_length 24)]: calls=100 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0 median3=100 median2=0 single=0
+R2 tally [N2F R2 sensitivity (native period 48)]: calls=100 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0 median3=100 median2=0 single=0

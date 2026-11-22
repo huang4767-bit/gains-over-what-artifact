@@ -1,0 +1,169 @@
+dataset,check,ok,detail
+AirPassengersDataset,G0_md5,True,167ffa96204a2b47339c21eea25baf32 vs darts 167ffa96204a2b47339c21eea25baf32
+AirPassengersDataset,G1_align SM-GP,True,"len 29/(100, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align ARIMA(authors),True,"len 29/(100, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align TCN,True,"len 29/(100, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align N-BEATS,True,"len 29/(100, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align N-HiTS,True,"len 29/(100, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align ada,True,"len 29/(20, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align babbage,True,"len 29/(20, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align curie,True,"len 29/(20, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align GPT-3,True,"len 29/(20, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align PromptCast(GPT-3),True,"len 29/(20, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align GPT-4,True,"len 29/(10, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1_align GPT-3(gpt4file),True,"len 29/(20, 29) vs H=29; index_ok=True"
+AirPassengersDataset,G1b_promptcast_history (diagnostic),True,"stated 115 steps, parsed 115, n_train 115, share within 1 of round(train) = 1.0000"
+AirPassengersDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+AusBeerDataset,G0_md5,True,1f4028a570a20939411cc04de7364bbd vs darts 1f4028a570a20939411cc04de7364bbd
+AusBeerDataset,G1_align SM-GP,True,"len 43/(100, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align ARIMA(authors),True,"len 43/(100, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align TCN,True,"len 43/(100, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align N-BEATS,True,"len 43/(100, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align N-HiTS,True,"len 43/(100, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align ada,True,"len 43/(20, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align babbage,True,"len 43/(20, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align curie,True,"len 43/(20, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align GPT-3,True,"len 43/(20, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align PromptCast(GPT-3),True,"len 43/(30, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align GPT-4,True,"len 43/(10, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1_align GPT-3(gpt4file),True,"len 43/(20, 43) vs H=43; index_ok=True"
+AusBeerDataset,G1b_promptcast_history (diagnostic),True,"stated 168 steps, parsed 168, n_train 168, share within 1 of round(train) = 1.0000"
+AusBeerDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+GasRateCO2Dataset,G0_md5,True,77bf383715a9cf81459f81fe17baf3b0 vs darts 77bf383715a9cf81459f81fe17baf3b0
+GasRateCO2Dataset,G1_align SM-GP,True,"len 60/(100, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align ARIMA(authors),True,"len 60/(100, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align TCN,True,"len 60/(100, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align N-BEATS,True,"len 60/(100, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align N-HiTS,True,"len 60/(100, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align ada,True,"len 60/(20, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align babbage,True,"len 60/(20, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align curie,True,"len 60/(20, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align GPT-3,True,"len 60/(20, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align PromptCast(GPT-3),True,"len 60/(30, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align GPT-4,True,"len 60/(10, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1_align GPT-3(gpt4file),True,"len 60/(20, 60) vs H=60; index_ok=True"
+GasRateCO2Dataset,G1b_promptcast_history (diagnostic),True,"stated 236 steps, parsed 236, n_train 236, share within 1 of round(train) = 1.0000"
+GasRateCO2Dataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+MonthlyMilkDataset,G0_md5,True,4784443e696da45d7082e76a67687b93 vs darts 4784443e696da45d7082e76a67687b93
+MonthlyMilkDataset,G1_align SM-GP,True,"len 34/(100, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align ARIMA(authors),True,"len 34/(100, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align TCN,True,"len 34/(100, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align N-BEATS,True,"len 34/(100, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align N-HiTS,True,"len 34/(100, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align ada,True,"len 34/(20, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align babbage,True,"len 34/(20, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align curie,True,"len 34/(20, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align GPT-3,True,"len 34/(20, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align PromptCast(GPT-3),True,"len 34/(22, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align GPT-4,True,"len 34/(10, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1_align GPT-3(gpt4file),True,"len 34/(20, 34) vs H=34; index_ok=True"
+MonthlyMilkDataset,G1b_promptcast_history (diagnostic),True,"stated 134 steps, parsed 134, n_train 134, share within 1 of round(train) = 1.0000"
+MonthlyMilkDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+SunspotsDataset,G0_md5,True,4d27019c43d9c256d528f1bd6c5f40e0 vs darts 4d27019c43d9c256d528f1bd6c5f40e0
+SunspotsDataset,G1_align SM-GP,True,"len 141/(100, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align ARIMA(authors),True,"len 141/(100, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align TCN,True,"len 141/(100, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align N-BEATS,True,"len 141/(100, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align N-HiTS,True,"len 141/(100, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align ada,True,"len 141/(20, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align babbage,True,"len 141/(20, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align curie,True,"len 141/(20, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align GPT-3,True,"len 141/(20, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align PromptCast(GPT-3),True,"len 141/(21, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align GPT-4,True,"len 141/(10, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1_align GPT-3(gpt4file),True,"len 141/(20, 141) vs H=141; index_ok=True"
+SunspotsDataset,G1b_promptcast_history (diagnostic),True,"stated 564 steps, parsed 564, n_train 564, share within 1 of round(train) = 1.0000"
+SunspotsDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+WineDataset,G0_md5,True,b68971d7e709ad0b7e6300cab977e3cd vs darts b68971d7e709ad0b7e6300cab977e3cd
+WineDataset,G1_align SM-GP,True,"len 36/(100, 36) vs H=36; index_ok=True"
+WineDataset,G1_align ARIMA(authors),True,"len 36/(100, 36) vs H=36; index_ok=True"
+WineDataset,G1_align TCN,True,"len 36/(100, 36) vs H=36; index_ok=True"
+WineDataset,G1_align N-BEATS,True,"len 36/(100, 36) vs H=36; index_ok=True"
+WineDataset,G1_align N-HiTS,True,"len 36/(100, 36) vs H=36; index_ok=True"
+WineDataset,G1_align ada,True,"len 36/(20, 36) vs H=36; index_ok=True"
+WineDataset,G1_align babbage,True,"len 36/(20, 36) vs H=36; index_ok=True"
+WineDataset,G1_align curie,True,"len 36/(20, 36) vs H=36; index_ok=True"
+WineDataset,G1_align GPT-3,True,"len 36/(20, 36) vs H=36; index_ok=True"
+WineDataset,G1_align PromptCast(GPT-3),True,"len 36/(29, 36) vs H=36; index_ok=True"
+WineDataset,G1_align GPT-4,True,"len 36/(10, 36) vs H=36; index_ok=True"
+WineDataset,G1_align GPT-3(gpt4file),True,"len 36/(20, 36) vs H=36; index_ok=True"
+WineDataset,G1b_promptcast_history (diagnostic),True,"stated 140 steps, parsed 140, n_train 140, share within 1 of round(train) = 1.0000"
+WineDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+WoolyDataset,G0_md5,True,4be8b12314db94c8fd76f5c674454bf0 vs darts 4be8b12314db94c8fd76f5c674454bf0
+WoolyDataset,G1_align SM-GP,True,"len 24/(100, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align ARIMA(authors),True,"len 24/(100, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align TCN,True,"len 24/(100, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align N-BEATS,True,"len 24/(100, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align N-HiTS,True,"len 24/(100, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align ada,True,"len 24/(20, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align babbage,True,"len 24/(20, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align curie,True,"len 24/(20, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align GPT-3,True,"len 24/(20, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align PromptCast(GPT-3),True,"len 24/(21, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align GPT-4,True,"len 24/(10, 24) vs H=24; index_ok=True"
+WoolyDataset,G1_align GPT-3(gpt4file),True,"len 24/(20, 24) vs H=24; index_ok=True"
+WoolyDataset,G1b_promptcast_history (diagnostic),True,"stated 95 steps, parsed 95, n_train 95, share within 1 of round(train) = 1.0000"
+WoolyDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+HeartRateDataset,G0_md5,True,3c4a108e1116867cf056dc5be2c95386 vs darts 3c4a108e1116867cf056dc5be2c95386
+HeartRateDataset,G1_align SM-GP,True,"len 180/(100, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align ARIMA(authors),True,"len 180/(100, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align TCN,True,"len 180/(100, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align N-BEATS,True,"len 180/(100, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align N-HiTS,True,"len 180/(100, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align ada,True,"len 180/(20, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align babbage,True,"len 180/(20, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align curie,True,"len 180/(20, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align GPT-3,True,"len 180/(20, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align PromptCast(GPT-3),True,"len 180/(30, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align GPT-4,True,"len 180/(10, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1_align GPT-3(gpt4file),True,"len 180/(20, 180) vs H=180; index_ok=True"
+HeartRateDataset,G1b_promptcast_history (diagnostic),True,"stated 441 steps, parsed 441, n_train 720, share within 1 of round(train) = 1.0000"
+HeartRateDataset,X_crosscheck SNaive numpy vs statsforecast (diagnostic),True,max abs diff 0
+AirPassengersDataset,G2_reproduce SM-GP,True,CRPS ours 0.0614 vs rep 0.0639 (rel 0.0397); MAE[median/mean_abs_test] rel 1.234e-15; NLL/D pickle 5.9049 vs rep 5.9049
+AirPassengersDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0542 vs rep 0.0538 (rel 0.0066); MAE[median/mean_abs_test] rel 5.085e-16; NLL/D pickle 5.2512 vs rep 5.2512
+AirPassengersDataset,G2_reproduce TCN,True,CRPS ours 0.0967 vs rep 0.1063 (rel 0.0904); MAE[median/mean_abs_test] rel 5.559e-16; NLL/D pickle 6.3203 vs rep 6.3203
+AirPassengersDataset,G2_reproduce N-BEATS,True,CRPS ours 0.1786 vs rep 0.1887 (rel 0.0535); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 5.5379 vs rep 5.5379
+AirPassengersDataset,G2_reproduce N-HiTS,True,CRPS ours 0.1064 vs rep 0.1052 (rel 0.0115); MAE[median/mean_abs_test] rel 2.066e-16; NLL/D pickle 5.6627 vs rep 5.6627
+AirPassengersDataset,G2_reproduce GPT-3,True,CRPS ours 0.0530 vs rep 0.0374 (rel 0.4153); MAE[median/mean_abs_test] rel 1.067e-15; NLL/D pickle 4.7645 vs rep 4.7645
+AusBeerDataset,G2_reproduce SM-GP,True,CRPS ours 0.1981 vs rep 0.1989 (rel 0.0038); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 4.2947 vs rep 4.2947
+AusBeerDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0361 vs rep 0.0387 (rel 0.0680); MAE[median/mean_abs_test] rel 1.392e-15; NLL/D pickle 4.1379 vs rep 4.1379
+AusBeerDataset,G2_reproduce TCN,True,CRPS ours 0.0466 vs rep 0.0476 (rel 0.0212); MAE[median/mean_abs_test] rel 1.93e-16; NLL/D pickle 4.2559 vs rep 4.2559
+AusBeerDataset,G2_reproduce N-BEATS,True,CRPS ours 0.0202 vs rep 0.0207 (rel 0.0234); MAE[median/mean_abs_test] rel 3.585e-15; NLL/D pickle 4.1445 vs rep 4.1445
+AusBeerDataset,G2_reproduce N-HiTS,True,CRPS ours 0.0551 vs rep 0.0544 (rel 0.0132); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 4.4150 vs rep 4.4150
+AusBeerDataset,G2_reproduce GPT-3,True,CRPS ours 0.0305 vs rep 0.0331 (rel 0.0793); MAE[median/mean_abs_test] rel 3.697e-16; NLL/D pickle 3.3986 vs rep 3.3986
+GasRateCO2Dataset,G2_reproduce SM-GP,True,CRPS ours 0.0290 vs rep 0.0301 (rel 0.0353); MAE[median/mean_abs_test] rel 8.373e-16; NLL/D pickle 0.8287 vs rep 0.8287
+GasRateCO2Dataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0336 vs rep 0.0420 (rel 0.1996); MAE[median/mean_abs_test] rel 2.251e-15; NLL/D pickle 0.8006 vs rep 0.8006
+GasRateCO2Dataset,G2_reproduce TCN,True,CRPS ours 0.0323 vs rep 0.0362 (rel 0.1083); MAE[median/mean_abs_test] rel 1.874e-15; NLL/D pickle 0.8217 vs rep 0.8217
+GasRateCO2Dataset,G2_reproduce N-BEATS,True,CRPS ours 0.0313 vs rep 0.0319 (rel 0.0171); MAE[median/mean_abs_test] rel 1.159e-15; NLL/D pickle 0.8327 vs rep 0.8327
+GasRateCO2Dataset,G2_reproduce N-HiTS,True,CRPS ours 0.0533 vs rep 0.0533 (rel 0.0012); MAE[median/mean_abs_test] rel 9.876e-16; NLL/D pickle 1.0021 vs rep 1.0021
+GasRateCO2Dataset,G2_reproduce GPT-3,True,CRPS ours 0.0462 vs rep 0.0450 (rel 0.0277); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle -1.6940 vs rep -1.6940
+MonthlyMilkDataset,G2_reproduce SM-GP,True,CRPS ours 0.0269 vs rep 0.0277 (rel 0.0257); MAE[median/mean_abs_test] rel 1.178e-15; NLL/D pickle 4.3834 vs rep 4.3834
+MonthlyMilkDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0266 vs rep 0.0661 (rel 0.5975); MAE[median/mean_abs_test] rel 1.601e-15; NLL/D pickle 3.6007 vs rep 3.6007
+MonthlyMilkDataset,G2_reproduce TCN,True,CRPS ours 0.0616 vs rep 0.0581 (rel 0.0614); MAE[median/mean_abs_test] rel 5.041e-16; NLL/D pickle 4.9435 vs rep 4.9435
+MonthlyMilkDataset,G2_reproduce N-BEATS,True,CRPS ours 0.0316 vs rep 0.0323 (rel 0.0230); MAE[median/mean_abs_test] rel 3.539e-16; NLL/D pickle 4.5679 vs rep 4.5679
+MonthlyMilkDataset,G2_reproduce N-HiTS,True,CRPS ours 0.0300 vs rep 0.0294 (rel 0.0213); MAE[median/mean_abs_test] rel 1.637e-15; NLL/D pickle 3.9854 vs rep 3.9854
+MonthlyMilkDataset,G2_reproduce GPT-3,True,CRPS ours 0.0095 vs rep 0.0122 (rel 0.2237); MAE[median/mean_abs_test] rel 7.997e-15; NLL/D pickle 3.7880 vs rep 3.7880
+SunspotsDataset,G2_reproduce SM-GP,True,CRPS ours 0.5370 vs rep 0.5534 (rel 0.0297); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 5.9278 vs rep 5.9278
+SunspotsDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.4216 vs rep 0.5043 (rel 0.1641); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 4.7382 vs rep 4.7382
+SunspotsDataset,G2_reproduce TCN,True,CRPS ours 0.5035 vs rep 0.5986 (rel 0.1590); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 4.6879 vs rep 4.6879
+SunspotsDataset,G2_reproduce N-BEATS,True,CRPS ours 0.7143 vs rep 0.7352 (rel 0.0284); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 5.8557 vs rep 5.8557
+SunspotsDataset,G2_reproduce N-HiTS,True,CRPS ours 0.4639 vs rep 0.4957 (rel 0.0642); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 5.8748 vs rep 5.8748
+SunspotsDataset,G2_reproduce GPT-3,True,CRPS ours 0.4828 vs rep 0.5159 (rel 0.0641); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 4.6041 vs rep 4.6041
+WineDataset,G2_reproduce SM-GP,True,CRPS ours 0.1345 vs rep 0.1577 (rel 0.1472); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 9.5538 vs rep 9.5538
+WineDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0628 vs rep 0.0688 (rel 0.0878); MAE[median/mean_abs_test] rel 3.15e-16; NLL/D pickle 9.3291 vs rep 9.3291
+WineDataset,G2_reproduce TCN,True,CRPS ours 0.0890 vs rep 0.1013 (rel 0.1219); MAE[median/mean_abs_test] rel 6.632e-16; NLL/D pickle 9.6318 vs rep 9.6318
+WineDataset,G2_reproduce N-BEATS,True,CRPS ours 0.1288 vs rep 0.1357 (rel 0.0506); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 9.6623 vs rep 9.6623
+WineDataset,G2_reproduce N-HiTS,True,CRPS ours 0.1142 vs rep 0.1266 (rel 0.0981); MAE[median/mean_abs_test] rel 1.859e-16; NLL/D pickle 9.5133 vs rep 9.5133
+WineDataset,G2_reproduce GPT-3,True,CRPS ours 0.0447 vs rep 0.0435 (rel 0.0275); MAE[median/mean_abs_test] rel 9.261e-16; NLL/D pickle 9.4013 vs rep 9.4013
+WoolyDataset,G2_reproduce SM-GP,True,CRPS ours 0.1161 vs rep 0.1066 (rel 0.0892); MAE[median/mean_abs_test] rel 4.183e-16; NLL/D pickle 7.4509 vs rep 7.4509
+WoolyDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0782 vs rep 0.0855 (rel 0.0857); MAE[median/mean_abs_test] rel 3.464e-16; NLL/D pickle 7.5784 vs rep 7.5784
+WoolyDataset,G2_reproduce TCN,True,CRPS ours 0.1541 vs rep 0.1333 (rel 0.1562); MAE[median/mean_abs_test] rel 2.346e-16; NLL/D pickle 7.6776 vs rep 7.6776
+WoolyDataset,G2_reproduce N-BEATS,True,CRPS ours 0.1411 vs rep 0.1572 (rel 0.1026); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 8.3553 vs rep 8.3553
+WoolyDataset,G2_reproduce N-HiTS,True,CRPS ours 0.0543 vs rep 0.0684 (rel 0.2058); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 7.4265 vs rep 7.4265
+WoolyDataset,G2_reproduce GPT-3,True,CRPS ours 0.1286 vs rep 0.1310 (rel 0.0184); MAE[median/mean_abs_test] rel 5.043e-16; NLL/D pickle 7.5540 vs rep 7.5540
+HeartRateDataset,G2_reproduce SM-GP,True,CRPS ours 0.0429 vs rep 0.0458 (rel 0.0616); MAE[median/mean_abs_test] rel 1.376e-15; NLL/D pickle 3.3982 vs rep 3.3982
+HeartRateDataset,G2_reproduce ARIMA(authors),True,CRPS ours 0.0425 vs rep 0.0468 (rel 0.0903); MAE[median/mean_abs_test] rel 1.165e-15; NLL/D pickle 2.5051 vs rep 2.5051
+HeartRateDataset,G2_reproduce TCN,True,CRPS ours 0.0420 vs rep 0.0427 (rel 0.0158); MAE[median/mean_abs_test] rel 1.18e-16; NLL/D pickle 2.4794 vs rep 2.4794
+HeartRateDataset,G2_reproduce N-BEATS,True,CRPS ours 0.0513 vs rep 0.0559 (rel 0.0815); MAE[median/mean_abs_test] rel 9.868e-16; NLL/D pickle 2.6478 vs rep 2.6478
+HeartRateDataset,G2_reproduce N-HiTS,True,CRPS ours 0.0457 vs rep 0.0464 (rel 0.0165); MAE[median/mean_abs_test] rel 8.501e-16; NLL/D pickle 2.2906 vs rep 2.2906
+HeartRateDataset,G2_reproduce GPT-3,True,CRPS ours 0.0499 vs rep 0.0499 (rel 5.902e-05); MAE[median/mean_abs_test] rel 0.0000; NLL/D pickle 2.2724 vs rep 2.2724

@@ -1,0 +1,15 @@
+[2026-11-18 16:45:52] === compevo-check start | ur_c.py v1 (2026-11-18) | argv ['compevo-check', '--ext-root', '<data>\\ur_c']
+[2026-11-18 16:45:52] versions: python 3.14.2 | statsforecast 2.1.1 | statsmodels 0.15.0 | numpy 2.5.4 | pandas 2.3.3 | pyarrow 26.0.1
+[2026-11-18 16:45:55] CompEvo head of default branch 'master': e3204217c39bc141315bc5b8cb3d9ea2ab3cba32 (2026-05-26T04:10:50Z); tree truncated False
+[2026-11-18 16:46:05] tree blobs 25; text scanned 21; READMEs 1; electricity data candidates downloaded 0; failures network 0 / local save 0
+[2026-11-18 16:46:06] CompEvo [criteria §5.7] at e3204217c39bc141315bc5b8cb3d9ea2ab3cba32 (master, 2026-05-26T04:10:50Z)
+[2026-11-18 16:46:06] Verdict method: mechanical verdict (regex and file rules); item 2 looks only at the repository README, paper not included (5.7-2 allows the README or the paper to specify; the paper gives no L). Any separate judgment of the evidence made afterwards may only be labeled 'post hoc'.
+[2026-11-18 16:46:06]   condition 1: NOT met -- 0 qualifying file(s) among 0 electricity data candidate(s)
+[2026-11-18 16:46:06]   condition 2: NOT met -- no look-back setting found
+[2026-11-18 16:46:06]   condition 3: NOT met -- test split and/or stride missing or not unique
+[2026-11-18 16:46:06]   condition 4: NOT met -- 0 distinct target settings
+[2026-11-18 16:46:06]   condition 5: NOT met -- horizon setting missing or not uniquely 48
+[2026-11-18 16:46:06]   condition 6: NOT met -- a scaler / normalisation appears; scale of the error not mechanically certain
+[2026-11-18 16:46:06]   condition 7: met -- all files from the recorded commit
+[2026-11-18 16:46:06] VERDICT: cannot be determined; not met: 1, 2, 3, 4, 5, 6
+[2026-11-18 16:46:06] === compevo-check end | exit code 0

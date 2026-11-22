@@ -1,0 +1,63 @@
+{
+  "status": "OK",
+  "script": "ur_c.py v1 (2026-11-18)",
+  "json_sha256": "C56C5660942CD4672A17CC6C64653189CA11C52D9ECE45990588BDC5413DA92B",
+  "n_windows": 100,
+  "n_points": 4800,
+  "rmse": {
+    "R1": 488.48701524665245,
+    "R2": 839.621103346161,
+    "R2_native48": 838.2405691478256
+  },
+  "system_value": 280.39,
+  "r": {
+    "R2": 2.9944759204898928,
+    "R1": 1.742169889249447,
+    "R2_native48": 2.9895522991113292
+  },
+  "flags": {
+    "P1": true,
+    "P2": true,
+    "gt_1405": true
+  },
+  "v1": "protocol not verified (5.5), descriptive only",
+  "r2_tally": {
+    "tag": "N2F R2 primary (season_length 24)",
+    "hard_sentinel": true,
+    "sentinel_tripped": false,
+    "every_call_failed": [],
+    "calls": 100,
+    "allfail_to_R1": 0,
+    "fail_ETS": 0,
+    "fail_Theta": 0,
+    "fail_ARIMA": 0,
+    "mode_median3": 100,
+    "mode_median2": 0,
+    "mode_single": 0,
+    "mode_R1": 0,
+    "first_errors": {}
+  },
+  "r2_tally_native48": {
+    "tag": "N2F R2 sensitivity (native period 48)",
+    "hard_sentinel": false,
+    "sentinel_tripped": false,
+    "every_call_failed": [],
+    "calls": 100,
+    "allfail_to_R1": 0,
+    "fail_ETS": 0,
+    "fail_Theta": 0,
+    "fail_ARIMA": 0,
+    "mode_median3": 100,
+    "mode_median2": 0,
+    "mode_single": 0,
+    "mode_R1": 0,
+    "first_errors": {}
+  },
+  "regions": {
+    "TAS": 25,
+    "NSW": 23,
+    "VIC": 19,
+    "QLD": 20,
+    "SA": 13
+  }
+}

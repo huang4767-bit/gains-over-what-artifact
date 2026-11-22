@@ -1,0 +1,52 @@
+header: date,pred_humidity,pred_pressure,pred_temp,pred_w_dir,pred_w_speed,target,ture_w_speed
+rows N = 48673 ; rows with !=8 fields = 0 ; unparsable dates = 0
+missing/non-numeric in pred_humidity : 0
+missing/non-numeric in pred_pressure : 0
+missing/non-numeric in pred_temp : 0
+missing/non-numeric in pred_w_dir : 0
+missing/non-numeric in pred_w_speed : 0
+missing/non-numeric in target : 0
+missing/non-numeric in ture_w_speed : 0
+non-15-minute steps: 0
+first timestamp: 2020-01-01 00:00 ; last timestamp: 2021-05-22 00:00
+W1 (N=48673, first 2020-01-01 00:00, last 2021-05-22 00:00): PASS
+nTrain = 34071 (rows 0..34070); last train timestamp 2020-12-20 21:30
+train target mean = 15.124873411405771 ; std ddof0 = 18.280940371777728 ; std ddof1 = 18.281208654816048 ; valid train targets = 34071
+first origin idx = 38976 (expected 38976) ts 2021-02-10 00:00
+last origin idx = 48576 ts 2021-05-21 00:00 ; last scored idx = 48671 ts 2021-05-21 23:45 (expected 2021-05-21 23:45)
+first origin >= nTrain? True ; lookback available (origin-lookback >= 0)? True
+origin/last-scored check vs criteria: OK
+NaN targets inside scored windows: 0
+self-check (a) P0 z-MSE PowerShell = 3.70084728713386 ; C# = 3.70084728713386 ; |diff| = 0 ; max per-window |diff| = 0 ; agree<1e-9: True
+P0 z-MSE (ddof0) = 3.7008 ; W2 range [0.7637, 6.8730] : PASS
+Alignment table: corr(target[t], speed[t+lag]) on training part
+lag, ture_w_speed, pred_w_speed
+ -8, 0.64403, 0.54143
+ -7, 0.66348, 0.55127
+ -6, 0.68388, 0.56058
+ -5, 0.70485, 0.56911
+ -4, 0.72624, 0.57671
+ -3, 0.74829, 0.58347
+ -2, 0.77160, 0.58929
+ -1, 0.79485, 0.59405
+  0, 0.81216, 0.59762
+  1, 0.79371, 0.59988
+  2, 0.77060, 0.60076
+  3, 0.74799, 0.60015
+  4, 0.72589, 0.59819
+  5, 0.70373, 0.59495
+  6, 0.68266, 0.59049
+  7, 0.66265, 0.58497
+  8, 0.64363, 0.57859
+argmax lag ture_w_speed = 0 (corr 0.81216) ; argmax lag pred_w_speed = 2 (corr 0.60076)
+W3 (ture_w_speed argmax lag in {-1,0,1}): PASS
+D1 (pred_w_speed) : non-empty bins = 40 ; bin range [0 .. 40] = speed [0 .. 20.5) ; empty bins inside range = 1 ; bins with <5 train rows = 8
+D2 (ture_w_speed) : non-empty bins = 46 ; bin range [0 .. 48] = speed [0 .. 24.5) ; empty bins inside range = 3 ; bins with <5 train rows = 8
+horizon points whose bin was empty in training (filled by nearest bin): D1 = 0, D2 = 0
+missing-value fills used: P0 = 0, D1 = 0, D2 = 0
+RESULT P0: z-MSE(ddof0) = 3.7008 ; z-MSE(ddof1) = 3.7007 ; per-window MSE min/median/max = 0.0000 / 2.1502 / 15.0717
+RESULT D1: z-MSE(ddof0) = 1.9365 ; z-MSE(ddof1) = 1.9364 ; per-window MSE min/median/max = 0.0485 / 1.4179 / 7.7084
+RESULT D2: z-MSE(ddof0) = 1.1997 ; z-MSE(ddof1) = 1.1997 ; per-window MSE min/median/max = 0.0000 / 0.7185 / 4.7762
+D1 vs D2 (descriptive): D1 = 1.9365, D2 = 1.1997, D1 - D2 = 0.7367
+Gates: W1=True W2=True W3=True
+VERDICT: m2 = 1.1997 -> m2 <= 1.596 : SUPPORTED

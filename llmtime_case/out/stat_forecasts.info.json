@@ -1,0 +1,64 @@
+{
+  "statsforecast": "2.1.1",
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.4",
+  "pandas": "2.3.3",
+  "datasets": {
+    "AirPassengersDataset": {
+      "n_train": 115,
+      "horizon": 29,
+      "m": 12,
+      "md5": "167ffa96204a2b47339c21eea25baf32",
+      "note": ""
+    },
+    "AusBeerDataset": {
+      "n_train": 168,
+      "horizon": 43,
+      "m": 4,
+      "md5": "1f4028a570a20939411cc04de7364bbd",
+      "note": ""
+    },
+    "GasRateCO2Dataset": {
+      "n_train": 236,
+      "horizon": 60,
+      "m": 1,
+      "md5": "77bf383715a9cf81459f81fe17baf3b0",
+      "note": ""
+    },
+    "MonthlyMilkDataset": {
+      "n_train": 134,
+      "horizon": 34,
+      "m": 12,
+      "md5": "4784443e696da45d7082e76a67687b93",
+      "note": ""
+    },
+    "SunspotsDataset": {
+      "n_train": 564,
+      "horizon": 141,
+      "m": 33,
+      "md5": "4d27019c43d9c256d528f1bd6c5f40e0",
+      "note": ""
+    },
+    "WineDataset": {
+      "n_train": 140,
+      "horizon": 36,
+      "m": 12,
+      "md5": "b68971d7e709ad0b7e6300cab977e3cd",
+      "note": ""
+    },
+    "WoolyDataset": {
+      "n_train": 95,
+      "horizon": 24,
+      "m": 4,
+      "md5": "4be8b12314db94c8fd76f5c674454bf0",
+      "note": ""
+    },
+    "HeartRateDataset": {
+      "n_train": 720,
+      "horizon": 180,
+      "m": 1,
+      "md5": "3c4a108e1116867cf056dc5be2c95386",
+      "note": ""
+    }
+  }
+}

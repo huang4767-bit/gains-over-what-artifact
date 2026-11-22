@@ -1,0 +1,10 @@
+CiK / BNP formal run -- ur_c.py v1 (2026-11-18)
+instances 355; interface fix [criteria §5.9-3] used: False
+aggregate RCRPS (unrounded): R1 0.3518304534922316  R2 0.4295157792927236  Exp-Smoothing anchor 0.5718680257615214
+V1 [criteria §5.9]: anchor / 0.605 = 0.9452364062173908 (rel -0.05476) -> NOT PASS; magnitude gate 1/3..3: ok
+CiK: protocol not verified (baseline-consistency check not within 5%), r descriptive only
+  r(R2) = 0.4295157792927236 / 0.159 = 2.70135710246996  P1 (>1.221): True  P2 (>1.10): True   r(R1) = 2.2127701477498842
+BNP (protocol not verified, descriptive): r(R2) = 3.904688902661124  r(R1) = 3.198458668111196
+truncated at 5 (raw >= 5): anchor 3 (paper Table 6 Exp-Smoothing: 5), R1 2, R2 1; anchor failures (set to 5) 0
+R1 degenerate (history < m) 0; R2 tally [CiK R2 primary]: calls=355 all-three-failed(->R1)=0 fail_ETS=139 fail_Theta=10 fail_ARIMA=0 median3=216 median2=129 single=10
+anchor warnings (ignored, counted): {'FutureWarning': 7455, 'ConvergenceWarning': 2, 'RuntimeWarning': 42}

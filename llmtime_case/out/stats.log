@@ -1,0 +1,41 @@
+AirPassengersDataset AutoETS: ok ETS(M,N,M)
+AirPassengersDataset AutoARIMA: ok ARIMA(1,1,0)(0,1,0)[12]                   
+AirPassengersDataset AutoTheta: ok OTM
+AirPassengersDataset SeasonalNaive_sf: ok 
+AirPassengersDataset Naive_sf: ok 
+AusBeerDataset AutoETS: ok ETS(M,A,M)
+AusBeerDataset AutoARIMA: ok ARIMA(0,1,2)(0,1,1)[4]                   
+AusBeerDataset AutoTheta: ok OTM
+AusBeerDataset SeasonalNaive_sf: ok 
+AusBeerDataset Naive_sf: ok 
+GasRateCO2Dataset AutoETS: ok ETS(M,N,N)
+GasRateCO2Dataset AutoARIMA: ok ARIMA(3,1,0)                   
+GasRateCO2Dataset AutoTheta: ok DOTM
+GasRateCO2Dataset SeasonalNaive_sf: ok 
+GasRateCO2Dataset Naive_sf: ok 
+MonthlyMilkDataset AutoETS: ok ETS(M,Ad,A)
+MonthlyMilkDataset AutoARIMA: ok ARIMA(2,0,0)(0,1,1)[12] with drift        
+MonthlyMilkDataset AutoTheta: ok OTM
+MonthlyMilkDataset SeasonalNaive_sf: ok 
+MonthlyMilkDataset Naive_sf: ok 
+SunspotsDataset AutoETS: ok ETS(A,N,N)
+SunspotsDataset AutoARIMA: ok ARIMA(2,0,2)(0,0,1)[33] with non-zero mean
+SunspotsDataset AutoTheta: ok DOTM
+SunspotsDataset SeasonalNaive_sf: ok 
+SunspotsDataset Naive_sf: ok 
+WineDataset AutoETS: ok ETS(M,A,M)
+WineDataset AutoARIMA: ok ARIMA(1,1,2)(1,1,1)[12]                   
+WineDataset AutoTheta: ok DOTM
+WineDataset SeasonalNaive_sf: ok 
+WineDataset Naive_sf: ok 
+WoolyDataset AutoETS: ok ETS(A,N,A)
+WoolyDataset AutoARIMA: ok ARIMA(1,0,0)(0,1,1)[4]                   
+WoolyDataset AutoTheta: ok OTM
+WoolyDataset SeasonalNaive_sf: ok 
+WoolyDataset Naive_sf: ok 
+HeartRateDataset AutoETS: ok ETS(A,N,N)
+HeartRateDataset AutoARIMA: ok ARIMA(5,0,1) with non-zero mean
+HeartRateDataset AutoTheta: ok DOTM
+HeartRateDataset SeasonalNaive_sf: ok 
+HeartRateDataset Naive_sf: ok 
+wrote <repo>\llmtime_case\out\stat_forecasts.csv

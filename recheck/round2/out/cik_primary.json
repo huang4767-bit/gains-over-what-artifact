@@ -1,0 +1,141 @@
+{
+  "status": "OK",
+  "script": "ur_c.py v1 (2026-11-18)",
+  "parquet_sha256": "44827A18C708D2A948A58832419C475353F5538B163F16ED3D83E2B98B9130B0",
+  "n_instances": 355,
+  "gate": {
+    "n_rows": 355,
+    "n_parsed": 355,
+    "n_tasks": 71,
+    "seeds_per_task_counts": {
+      "5": 71
+    },
+    "weight_sum": "105",
+    "finite_constraint_min": 49,
+    "finite_constraint_max": 22,
+    "roi_nonempty": 100,
+    "vmax_nonempty": 10,
+    "seasonal_period_counts": {
+      "-1": 190,
+      "7": 45,
+      "24": 120
+    },
+    "past_len_min_med_max": [
+      3,
+      48.0,
+      287
+    ],
+    "future_len_min_med_max": [
+      6,
+      24.0,
+      99
+    ],
+    "inferred_freq_counts": {
+      "h": 120,
+      "D": 45,
+      "s": 15,
+      "10min": 30,
+      "MS": 145
+    },
+    "past_with_nonfinite_ffilled": 0,
+    "future_starts_after_past_end": 355,
+    "gate_failures": [],
+    "extra_check_failures": [],
+    "ok": true
+  },
+  "interface_fix_used": false,
+  "interface_probe": {
+    "probe_row": 100,
+    "minus1_status": "ok",
+    "none_status": "ok",
+    "fix": false,
+    "cik_smoke_pass": true,
+    "cik_problems": [],
+    "smoke_run": "20261118_164424"
+  },
+  "aggregate_rcrps": {
+    "R1": 0.3518304534922316,
+    "R2": 0.4295157792927236,
+    "anchor": 0.5718680257615214
+  },
+  "system_values": {
+    "CiK": 0.159,
+    "BNP": 0.11
+  },
+  "anchor_paper": 0.605,
+  "anchor_ratio": 0.9452364062173908,
+  "anchor_rel_dev": -0.0547635937826092,
+  "v1_pass": false,
+  "magnitude_gate_ok": true,
+  "cik_status": "protocol not verified (baseline-consistency check not within 5%), r descriptive only",
+  "bnp_status": "protocol not verified (5.8), R1/R2 computed the same as for CiK, descriptive only",
+  "r": {
+    "CiK_R2": 2.70135710246996,
+    "CiK_R1": 2.2127701477498842,
+    "BNP_R2": 3.904688902661124,
+    "BNP_R1": 3.198458668111196
+  },
+  "flags": {
+    "CiK_R2": {
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    },
+    "CiK_R1": {
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    },
+    "BNP_R2": {
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    },
+    "BNP_R1": {
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    }
+  },
+  "diagnostics": {
+    "truncated_at_5": {
+      "R1": 2,
+      "R2": 1,
+      "anchor": 3
+    },
+    "truncated_paper_expsmoothing": 5,
+    "anchor_failures": 0,
+    "anchor_at_5_total": 3,
+    "r1_degenerate": 0,
+    "r2_tally": {
+      "tag": "CiK R2 primary",
+      "hard_sentinel": true,
+      "sentinel_tripped": false,
+      "every_call_failed": [],
+      "calls": 355,
+      "allfail_to_R1": 0,
+      "fail_ETS": 139,
+      "fail_Theta": 10,
+      "fail_ARIMA": 0,
+      "mode_median3": 216,
+      "mode_median2": 129,
+      "mode_single": 10,
+      "mode_R1": 0,
+      "first_errors": {
+        "ETS/KeyError": "'fitted'",
+        "Theta/NotImplementedError": "tiny datasets",
+        "ETS/NotImplementedError": "tiny datasets"
+      }
+    },
+    "anchor_warnings": {
+      "FutureWarning": 7455,
+      "ConvergenceWarning": 2,
+      "RuntimeWarning": 42
+    },
+    "nonfinite": {
+      "R1": 0,
+      "R2": 0,
+      "anchor": 0
+    }
+  }
+}

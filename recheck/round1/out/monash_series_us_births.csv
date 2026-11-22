@@ -1,0 +1,2 @@
+dataset,series,n_hist,m_r1_eff,m_r2,mae_r1,mae_naive,mae_r2,r2_mode,mae_ETS,stat_ETS,mae_Theta,stat_Theta,mae_ARIMA,stat_ARIMA
+us_births,0,500,7,7,466.6666666666667,1152.6666666666667,413.0236362068481,median3,412.6223823138935,ok,414.9004063128935,ok,412.4185548193032,ok

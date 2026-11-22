@@ -1,0 +1,50 @@
+supplementary re-check (5 systems) mechanical summary -- ur_c.py v1 (2026-11-18)
+verdicts always use unrounded values (5.12), three decimals kept below for display only
+
+== per-system status (§10) ==
+S07 CiK: protocol not verified (baseline-consistency check not within 5%), r descriptive only | control R2 | main metric RCRPS | system value 0.159 (Direct Prompt (ours), Llama-3.1-405B-Inst, Table 1/3) | control value 0.4295 | r 2.701 (R1 2.213) | V1 failed (Exp-Smoothing 0.5719 vs 0.605, rel -0.0548) | expectation 1 (r > 1.221) True, expectation 2 (r > 1.10) True | counted (number of counted systems K / systems in the combined reading N_comb) False
+     read before the criteria were written: Direct Prompt 0.159; ARIMA 0.475, ETS 0.530, Exp-Smoothing 0.605, Chronos-Large 0.326 (full table read)
+S21 BNP: protocol not verified (5.8), R1/R2 computed the same as for CiK, descriptive only | control R2 | main metric RCRPS | system value 0.110 (SampleWise-CorDP(Chronos Large), tied with Claude-Sonnet-4.5 / Gemini-2.5-Pro) | control value 0.4295 | r 3.905 (R1 3.198) | V1 protocol not verified (5.8) | expectation 1 (r > 1.221) True, expectation 2 (r > 1.10) True | counted (number of counted systems K / systems in the combined reading N_comb) False
+     read before the criteria were written: smallest cell of the paper's method 0.110; base forecasters 0.382, 0.492, 0.636
+S10 Nexus: counted (V1 type A judged passed, 5.4) | control R3 | main metric Weather MAE + 5 columns MAPE (geometric mean) | system value per column, the smaller of the two Nexus versions (Table 1) | control value best single model Chronos-2 | r 1.121 (R1 —) | V1 passed (type A) | expectation 1 (r > 1.221) False, expectation 2 (r > 1.10) True | counted (number of counted systems K / systems in the combined reading N_comb) True
+     read before the criteria were written: Table 1 in full (r could be computed from the numbers in 6.3 before the criteria were written)
+S11 N2F: protocol not verified (5.5), descriptive only for Electricity | control R2 | main metric RMSE (original scale, 4,800 points pooled) | system value 280.39 (Table 1 Filtered News) | control value 839.6211 | r 2.994 (R1 1.742) | V1 protocol not verified | expectation 1 (r > 1.221) True, expectation 2 (r > 1.10) True | counted (number of counted systems K / systems in the combined reading N_comb) False
+     read before the criteria were written: Table 3 (deep-model baselines only)
+S16 CompEvo: window or data cannot be determined (not met: 1, 2, 3, 4, 5, 6) | control (R2) | main metric RMSE | system value 354.18 (used only when the 5.7 conditions are met) | control value — | r — (R1 —) | V1 —(5.7) | expectation 1 (r > 1.221) False, expectation 2 (r > 1.10) False | counted (number of counted systems K / systems in the combined reading N_comb) False
+     read before the criteria were written: baseline cells same as N2F
+
+== CiK diagnostics (§10) ==
+anchor baseline value 0.5718680257615214 (/0.605 = 0.9452364062173908); interface fix (5.9-3): not used
+truncated at 5: anchor baseline 3 (paper Table 6 Exp-Smoothing 5), R1 2, R2 1; anchor baseline failures (recorded as 5) 0
+R1 degenerate 0; R2 failures ETS/Theta/ARIMA 139/10/0, fallback median2 129, single 10, R1 0
+anchor baseline seed distribution (21 runs, descriptive): median 0.5806, 5%–95% [0.5648, 0.5976], within 5%: 15/21
+
+== Section 7 (7.2) ==
+K = 1 (Nexus r=1.121); a (r>1.221) = 0; b (r>1.10) = 1
+reading: too few systems for a test (only per-system r and whether P1, P2 are met are reported; when met, only write 'meets the threshold ... but is not a test')
+CompEvo not counted, the 'with / without CompEvo' conventions do not apply (5.7)
+
+== Section 8: combined reading (secondary reading, secondary, pre-specified)==
+main convention (with LSTPrompt): N_comb = 9, ⌈N/2⌉ = 5, ⌊N/4⌋ = 2
+    r ≤ 1.00: 0 → ahead tier (counter-evidence)
+    r ≤ 1.05: 2 → ahead tier (counter-evidence)
+    r ≤ 1.10: 4 → mixed tier
+    three thresholds: close
+other convention (without LSTPrompt): N_comb = 8, ⌈N/2⌉ = 4, ⌊N/4⌋ = 2
+    r ≤ 1.00: 0 → ahead tier (counter-evidence)
+    r ≤ 1.05: 2 → ahead tier (counter-evidence)
+    r ≤ 1.10: 4 → matched tier
+    three thresholds: close
+abstract rule (§8): the three thresholds of the main convention fall in different tiers (close): the abstract gives no separate combined reading and still follows the 'close' of the main reading N=8
+
+== 7.3 descriptive (does not change the reading of 7.2) ==
+1. ServiceNow merged (CiK and BNP counted as one unit, taking the smaller r): CiK r = 2.701
+2. N2F (Electricity) r = 2.994, P1 True, P2 True; BNP r = 3.905, P1 True, P2 True; both 'protocol not verified, not counted'. CompEvo: window or data cannot be determined (not met: 1, 2, 3, 4, 5, 6)
+3. r > 1.405 (text written in advance: 'among newly added input category S systems', the 5 newly added systems are all input category S): by the literal convention, 3 of the newly added systems with a computed r ['BNP', 'CiK', 'N2F'] (including systems whose protocol was not verified); supplementary convention, 0 of the newly added systems that pass V1 []
+4. sensitivity (5.10, descriptive only):
+   N2F R2 with the native period 48: r = 2.990 [R2 falls back to R1 0/100, the sentinel for the first 20 runs all failing was not triggered, models that fail every time []]
+   CiK -1 now by frequency table: r_CiK(R2) = 2.701, r_BNP(R2) = 3.905 [R2 falls back to R1 0/175, the sentinel for the first 20 runs all failing was not triggered, models that fail every time []]
+   Nexus per-column best within the pool: r = 1.116
+   √r (post hoc descriptive, applied only to the squared-error metric systems among the original 8: CastFSR 1.347→1.161, JudgeCast 1.767→1.329): N=8 count [0, 2, 4] close; N=7 count [0, 2, 4] close
+
+original 8 systems (taken from read_values.md and ur_b_summary.csv): MoiraiAgent 1.013, TSOrchestra 1.076, FASE 1.072, TimeRSI 1.402, LLMTime 1.004, LSTPrompt 1.221, CastFSR 1.347, JudgeCast 1.767

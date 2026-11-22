@@ -1,0 +1,120 @@
+{
+  "script": "ur_c.py v1 (2026-11-18)",
+  "v1": "passed (type A, judged in 5.4, not re-judged once fixed in advance)",
+  "control": "R3 best single pool model",
+  "metric": "Weather MAE, other five columns MAPE % [criteria §5.4]",
+  "columns": [
+    "Weather MAE",
+    "Elec MAPE",
+    "Eq-3d MAPE",
+    "Com-3d MAPE",
+    "Eq-7d MAPE",
+    "Com-7d MAPE"
+  ],
+  "main": {
+    "system_values": [
+      1.97,
+      5.305,
+      1.958,
+      2.488,
+      2.994,
+      3.434
+    ],
+    "system_version": [
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)"
+    ],
+    "geomean_by_model": {
+      "Chronos-2": 1.1206757676571322,
+      "TimesFM-2.5": 1.1843876950786287,
+      "TiRex": 1.1334336968883396
+    },
+    "best_model": "Chronos-2",
+    "r": 1.1206757676571322,
+    "per_column_ratio_best": [
+      1.349746192893401,
+      1.1666352497643733,
+      1.044943820224719,
+      1.0562700964630225,
+      1.0404141616566467,
+      1.0955154338963307
+    ],
+    "sens_per_column_best_ratio": [
+      1.349746192893401,
+      1.1666352497643733,
+      1.044943820224719,
+      1.047427652733119,
+      1.0390781563126252,
+      1.0760046592894583
+    ],
+    "sens_per_column_best_model": [
+      "Chronos-2",
+      "Chronos-2",
+      "Chronos-2",
+      "TiRex",
+      "TiRex",
+      "TiRex"
+    ],
+    "r_sens_per_column_best": 1.115521020298798
+  },
+  "flags": {
+    "P1": false,
+    "P2": true,
+    "gt_1405": false
+  },
+  "rmse_descriptive": {
+    "system_values": [
+      2.717,
+      1309.9,
+      10.272,
+      31.461,
+      15.341,
+      48.61
+    ],
+    "system_version": [
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)",
+      "Nexus (Gemini-3.1-Pro)"
+    ],
+    "geomean_by_model": {
+      "Chronos-2": 1.134769023241581,
+      "TimesFM-2.5": 1.2006903728514289,
+      "TiRex": 1.128143393880335
+    },
+    "best_model": "TiRex",
+    "r": 1.128143393880335,
+    "per_column_ratio_best": [
+      1.3986013986013985,
+      1.246507366974578,
+      1.046144859813084,
+      1.0353771335939734,
+      1.0365034873867414,
+      1.053260645957622
+    ],
+    "sens_per_column_best_ratio": [
+      1.3813029076186971,
+      1.1639056416520344,
+      1.0356308411214954,
+      1.0353771335939734,
+      1.0365034873867414,
+      1.053260645957622
+    ],
+    "sens_per_column_best_model": [
+      "Chronos-2",
+      "Chronos-2",
+      "Chronos-2",
+      "TiRex",
+      "TiRex",
+      "TiRex"
+    ],
+    "r_sens_per_column_best": 1.1111417809660176
+  },
+  "note": "RMSE descriptive only [criteria §5.4]; per-column best descriptive only [criteria §5.4] [criteria §5.10]"
+}

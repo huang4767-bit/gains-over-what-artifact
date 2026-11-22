@@ -1,0 +1,41 @@
+{
+  "anchor_seed_distribution": {
+    "n_runs": 21,
+    "median": 0.5805899903552527,
+    "p05": 0.5647503449118035,
+    "p95": 0.5975844995083642,
+    "n_within_5pct": 15
+  },
+  "freq_table_sensitivity": {
+    "computed": true,
+    "aggregate_R1": 0.3518304534922316,
+    "aggregate_R2": 0.4295157792927236,
+    "r_CiK_R2": 2.70135710246996,
+    "r_CiK_R1": 2.2127701477498842,
+    "r_BNP_R2": 3.904688902661124,
+    "r_BNP_R1": 3.198458668111196,
+    "n_recomputed": 175,
+    "r1_degenerate": 175,
+    "r2_tally": {
+      "tag": "CiK R2 sensitivity (-1 -> frequency table)",
+      "hard_sentinel": false,
+      "sentinel_tripped": false,
+      "every_call_failed": [],
+      "calls": 175,
+      "allfail_to_R1": 0,
+      "fail_ETS": 139,
+      "fail_Theta": 10,
+      "fail_ARIMA": 0,
+      "mode_median3": 36,
+      "mode_median2": 129,
+      "mode_single": 10,
+      "mode_R1": 0,
+      "first_errors": {
+        "ETS/KeyError": "'fitted'",
+        "Theta/NotImplementedError": "tiny datasets",
+        "ETS/NotImplementedError": "tiny datasets"
+      }
+    }
+  },
+  "label": "descriptive; does not change V1, K, N_comb [criteria §5.9] [criteria §5.10]"
+}

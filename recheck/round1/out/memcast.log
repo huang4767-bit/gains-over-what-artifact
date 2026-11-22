@@ -1,0 +1,8 @@
+[2026-11-16 19:49:09] === memcast start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['memcast', '--out', '<repo>\\recheck\\round1\\out']
+[2026-11-16 19:49:09] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-16 19:49:09] MemCast BE: placements=190 V1 ARIMA median 1121.698 vs paper 6813.559 (rel -0.835) | r_R2 median 1.428 [0.181, 2.998] | r_R1 median 1.517 | scale_ok 165 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:10] MemCast DE: placements=190 V1 ARIMA median 336.564 vs paper 414.126 (rel -0.187) | r_R2 median 1.675 [0.757, 3.402] | r_R1 median 1.832 | scale_ok 186 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:10] MemCast FR: placements=190 V1 ARIMA median 1369.467 vs paper 3072.651 (rel -0.554) | r_R2 median 1.847 [0.116, 3.764] | r_R1 median 1.603 | scale_ok 104 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:10] MemCast NP: placements=190 V1 ARIMA median 62.120 vs paper 78.944 (rel -0.213) | r_R2 median 1.803 [0.488, 3.120] | r_R1 median 1.281 | scale_ok 181 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:10] MemCast PJM: placements=190 V1 ARIMA median 57.329 vs paper 181.141 (rel -0.684) | r_R2 median 1.587 [1.105, 2.102] | r_R1 median 1.752 | scale_ok 190 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:10] wrote memcast_placements.csv, memcast_markets.csv

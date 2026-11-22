@@ -1,0 +1,12 @@
+[2026-11-17 13:50:54] === castfsr start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['castfsr', '--r2-native-period', '--out', '<repo>\\recheck\\round1\\out', '--ett-dir', '<data>\\ur_b\\ett_1d16c8f', '--wind-csv', '<data>\\castfsr\\wind.csv']
+[2026-11-17 13:50:54] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-17 13:55:18] epf_cache.csv not found: run epf-cache first; EPF part of CastFSR skipped
+[2026-11-17 13:55:18] R3 readout: geometric-mean ratio to C* per pool expert {'ARIMA': 2.51965947194001, 'DLinear': 1.6397751219089785, 'PatchTST': 1.4752323892908799, 'iTransformer': 1.6562974698402986, 'Chronos2': 1.3474632156279804}; best single expert = Chronos2
+[2026-11-17 13:55:18] CastFSR ETTh1  gate=True anchor ARIMA(2,1,2) zMSE 0.1052 vs paper 0.156 (q=0.674, V1 fail, scale gate True) | zMSE R1 0.1221 R2 0.1227 | C* 0.077 | r_R3 1.338 r_R2 1.593 | origins=36 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-17 13:55:18] CastFSR ETTh2  gate=True anchor ARIMA(2,1,2) zMSE 0.3317 vs paper 0.356 (q=0.932, V1 fail, scale gate True) | zMSE R1 0.2964 R2 0.4457 | C* 0.242 | r_R3 1.062 r_R2 1.842 | origins=36 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-17 13:55:18] CastFSR ETTm1  gate=True anchor ARIMA(2,1,2) zMSE 0.0519 vs paper 0.142 (q=0.366, V1 fail, scale gate True) | zMSE R1 0.0699 R2 0.0644 | C* 0.055 | r_R3 1.091 r_R2 1.170 | origins=145 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-17 13:55:18] CastFSR ETTm2  gate=True anchor ARIMA(2,1,2) zMSE 0.2939 vs paper 0.173 (q=1.699, V1 fail, scale gate True) | zMSE R1 0.1596 R2 0.5593 | C* 0.127 | r_R3 1.134 r_R2 4.404 | origins=145 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-17 13:55:18] CastFSR Wind   gate=True anchor ARIMA(2,1,2) zMSE 3.6080 vs paper 3.682 (q=0.980, V1 PASS, scale gate True) | zMSE R1 4.5658 R2 4.1846 | C* 1.596 | r_R3 1.435 r_R2 2.622 | origins=101 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-17 13:55:18] R2 tally [castfsr]: calls=463 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0
+[2026-11-17 13:55:18] wrote castfsr_datasets.csv, castfsr_windows.csv
+[2026-11-17 13:55:18] *** POST HOC run (--r2-native-period); outputs written to POSTHOC_r2_native_period ***

@@ -1,0 +1,228 @@
+{
+  "script": "ur_c.py v1 (2026-11-18)",
+  "systems": [
+    {
+      "id": "S07",
+      "system": "CiK",
+      "status": "protocol not verified (baseline-consistency check not within 5%), r descriptive only",
+      "control": "R2",
+      "metric": "RCRPS",
+      "system_value": "0.159 (Direct Prompt (ours), Llama-3.1-405B-Inst, Table 1/3)",
+      "control_value": 0.4295157792927236,
+      "r": 2.70135710246996,
+      "r_R1": 2.2127701477498842,
+      "v1": "failed (Exp-Smoothing 0.5719 vs 0.605, rel -0.0548)",
+      "counted": false,
+      "known": "Direct Prompt 0.159; ARIMA 0.475, ETS 0.530, Exp-Smoothing 0.605, Chronos-Large 0.326 (full table read)",
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    },
+    {
+      "id": "S21",
+      "system": "BNP",
+      "status": "protocol not verified (5.8), R1/R2 computed the same as for CiK, descriptive only",
+      "control": "R2",
+      "metric": "RCRPS",
+      "system_value": "0.110 (SampleWise-CorDP(Chronos Large), tied with Claude-Sonnet-4.5 / Gemini-2.5-Pro)",
+      "control_value": 0.4295157792927236,
+      "r": 3.904688902661124,
+      "r_R1": 3.198458668111196,
+      "v1": "protocol not verified (5.8)",
+      "counted": false,
+      "known": "smallest cell of the paper's method 0.110; base forecasters 0.382, 0.492, 0.636",
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    },
+    {
+      "id": "S10",
+      "system": "Nexus",
+      "status": "counted (V1 type A judged passed, 5.4)",
+      "control": "R3",
+      "metric": "Weather MAE + 5 columns MAPE (geometric mean)",
+      "system_value": "per column, the smaller of the two Nexus versions (Table 1)",
+      "control_value": "best single model Chronos-2",
+      "r": 1.1206757676571322,
+      "r_R1": NaN,
+      "v1": "passed (type A)",
+      "counted": true,
+      "known": "Table 1 in full (r could be computed from the numbers in 6.3 before the criteria were written)",
+      "P1": false,
+      "P2": true,
+      "gt_1405": false
+    },
+    {
+      "id": "S11",
+      "system": "N2F",
+      "status": "protocol not verified (5.5), descriptive only for Electricity",
+      "control": "R2",
+      "metric": "RMSE (original scale, 4,800 points pooled)",
+      "system_value": "280.39 (Table 1 Filtered News)",
+      "control_value": 839.621103346161,
+      "r": 2.9944759204898928,
+      "r_R1": 1.742169889249447,
+      "v1": "protocol not verified",
+      "counted": false,
+      "known": "Table 3 (deep-model baselines only)",
+      "P1": true,
+      "P2": true,
+      "gt_1405": true
+    },
+    {
+      "id": "S16",
+      "system": "CompEvo",
+      "status": "window or data cannot be determined (not met: 1, 2, 3, 4, 5, 6)",
+      "control": "(R2)",
+      "metric": "RMSE",
+      "system_value": "354.18 (used only when the 5.7 conditions are met)",
+      "control_value": NaN,
+      "r": NaN,
+      "r_R1": NaN,
+      "v1": "—(5.7)",
+      "counted": false,
+      "known": "baseline cells same as N2F",
+      "P1": false,
+      "P2": false,
+      "gt_1405": false
+    }
+  ],
+  "original": {
+    "MoiraiAgent": 1.0132133004210833,
+    "TSOrchestra": 1.0757978723404256,
+    "FASE": 1.0721649484536082,
+    "TimeRSI": 1.4017917511832318,
+    "LLMTime": 1.004291105618052,
+    "LSTPrompt": 1.2212835564751343,
+    "CastFSR": 1.3474632156279804,
+    "JudgeCast": 1.766705782730369
+  },
+  "original_counts": {
+    "incl": {
+      "N": 8,
+      "ceil_half": 4,
+      "floor_quarter": 2,
+      "counts": [
+        0,
+        2,
+        4
+      ],
+      "tiers": [
+        "ahead tier (counter-evidence)",
+        "ahead tier (counter-evidence)",
+        "matched tier"
+      ],
+      "overall": "close"
+    },
+    "excl": {
+      "N": 7,
+      "ceil_half": 4,
+      "floor_quarter": 1,
+      "counts": [
+        0,
+        2,
+        4
+      ],
+      "tiers": [
+        "ahead tier (counter-evidence)",
+        "mixed tier",
+        "matched tier"
+      ],
+      "overall": "close"
+    }
+  },
+  "section7": {
+    "K": 1,
+    "a": 0,
+    "b": 1,
+    "verdict": "too few systems for a test",
+    "passers": {
+      "Nexus": 1.1206757676571322
+    }
+  },
+  "section8": {
+    "incl": {
+      "N": 9,
+      "ceil_half": 5,
+      "floor_quarter": 2,
+      "counts": [
+        0,
+        2,
+        4
+      ],
+      "tiers": [
+        "ahead tier (counter-evidence)",
+        "ahead tier (counter-evidence)",
+        "mixed tier"
+      ],
+      "overall": "close"
+    },
+    "excl": {
+      "N": 8,
+      "ceil_half": 4,
+      "floor_quarter": 2,
+      "counts": [
+        0,
+        2,
+        4
+      ],
+      "tiers": [
+        "ahead tier (counter-evidence)",
+        "ahead tier (counter-evidence)",
+        "matched tier"
+      ],
+      "overall": "close"
+    },
+    "abstract_rule": "the three thresholds of the main convention fall in different tiers (close): the abstract gives no separate combined reading and still follows the 'close' of the main reading N=8"
+  },
+  "desc73": {
+    "servicenow_min": [
+      "CiK",
+      2.70135710246996
+    ],
+    "gt1405_passers": [],
+    "gt1405_all": [
+      "BNP",
+      "CiK",
+      "N2F"
+    ],
+    "sqrt_r_post_hoc": {
+      "values": {
+        "CastFSR": 1.160802832365592,
+        "JudgeCast": 1.3291748503226988
+      },
+      "incl": {
+        "N": 8,
+        "ceil_half": 4,
+        "floor_quarter": 2,
+        "counts": [
+          0,
+          2,
+          4
+        ],
+        "tiers": [
+          "ahead tier (counter-evidence)",
+          "ahead tier (counter-evidence)",
+          "matched tier"
+        ],
+        "overall": "close"
+      },
+      "excl": {
+        "N": 7,
+        "ceil_half": 4,
+        "floor_quarter": 1,
+        "counts": [
+          0,
+          2,
+          4
+        ],
+        "tiers": [
+          "ahead tier (counter-evidence)",
+          "mixed tier",
+          "matched tier"
+        ],
+        "overall": "close"
+      }
+    }
+  }
+}

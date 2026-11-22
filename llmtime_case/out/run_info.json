@@ -1,0 +1,205 @@
+{
+  "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.5.2",
+  "pandas": "2.3.3",
+  "args": {
+    "cmd": "compare",
+    "llmtime_root": "<data>\\llmtime",
+    "darts_csv_dir": "<data>\\darts_csv",
+    "monash_dir": "<data>\\monash_tsf",
+    "stat_csv": "<repo>\\llmtime_case\\out\\stat_forecasts.csv",
+    "only": "all",
+    "out": "<repo>\\llmtime_case\\out"
+  },
+  "darts_mae_definition": {
+    "hits": {
+      "median/mean_abs_test": "48",
+      "median/range_full": "6",
+      "median/range_train": "0",
+      "median/std_test": "0",
+      "median/mean_abs_train": "6",
+      "samples/mean_abs_test": "2",
+      "samples/range_full": "0",
+      "samples/range_train": "0",
+      "samples/std_test": "0",
+      "samples/mean_abs_train": "1"
+    },
+    "total": 48,
+    "identified": "median/mean_abs_test",
+    "crps_hits": 10,
+    "crps_ok": false
+  },
+  "darts_counts": {
+    "P1": {
+      "control": "SNaive",
+      "llm": "GPT-3",
+      "metric": "mae_raw",
+      "k": 5,
+      "n": 8,
+      "k105": 6,
+      "k095": 3,
+      "geomean": 1.0419955603590094
+    },
+    "S1": {
+      "control": "AutoETS",
+      "llm": "GPT-3",
+      "metric": "mae_raw",
+      "k": 4,
+      "n": 8,
+      "k105": 6,
+      "k095": 3,
+      "geomean": 1.0745550785889322
+    },
+    "S2a": {
+      "control": "SNaive",
+      "llm": "GPT-4",
+      "metric": "mae_raw",
+      "k": 7,
+      "n": 8,
+      "k105": 7,
+      "k095": 7,
+      "geomean": 0.6423881670257775
+    },
+    "S2b": {
+      "control": "AutoETS",
+      "llm": "GPT-4",
+      "metric": "mae_raw",
+      "k": 6,
+      "n": 8,
+      "k105": 6,
+      "k095": 6,
+      "geomean": 0.6624610445222577
+    },
+    "S3a": {
+      "control": "SNaive",
+      "llm": "LLaMA-2 70B(agg)",
+      "metric": "mae_raw",
+      "k": 6,
+      "n": 8,
+      "k105": 6,
+      "k095": 4,
+      "geomean": 0.9381637707421739
+    },
+    "S3b": {
+      "control": "AutoETS",
+      "llm": "LLaMA-2 70B(agg)",
+      "metric": "mae_raw",
+      "k": 5,
+      "n": 8,
+      "k105": 7,
+      "k095": 4,
+      "geomean": 0.9674788288462685
+    },
+    "S5a": {
+      "control": "SNaive",
+      "llm": "GPT-3",
+      "metric": "crps",
+      "k": 3,
+      "n": 8,
+      "k105": 3,
+      "k095": 3,
+      "geomean": 1.192763475752644
+    },
+    "S5b": {
+      "control": "AutoETS",
+      "llm": "GPT-3",
+      "metric": "crps",
+      "k": 3,
+      "n": 8,
+      "k105": 3,
+      "k095": 3,
+      "geomean": 1.232402300662732
+    },
+    "S5c": {
+      "control": "SNaive",
+      "llm": "LLaMA-2 70B(agg)",
+      "metric": "crps",
+      "k": 0,
+      "n": 0,
+      "k105": 0,
+      "k095": 0,
+      "geomean": NaN
+    },
+    "D1": {
+      "control": "Naive",
+      "llm": "GPT-3",
+      "metric": "mae_raw",
+      "k": 2,
+      "n": 8,
+      "k105": 3,
+      "k095": 1,
+      "geomean": 2.048429545397059
+    },
+    "D2": {
+      "control": "AutoARIMA",
+      "llm": "GPT-3",
+      "metric": "mae_raw",
+      "k": 6,
+      "n": 8,
+      "k105": 6,
+      "k095": 5,
+      "geomean": 1.04775229818199
+    },
+    "D3": {
+      "control": "AutoTheta",
+      "llm": "GPT-3",
+      "metric": "mae_raw",
+      "k": 5,
+      "n": 8,
+      "k105": 5,
+      "k095": 4,
+      "geomean": 1.0030573320518106
+    }
+  },
+  "darts_wins": {
+    "reported": [
+      "MonthlyMilkDataset",
+      "WineDataset"
+    ],
+    "augmented": [
+      "WineDataset"
+    ],
+    "gpt3_beats_arima": [
+      "AusBeerDataset",
+      "MonthlyMilkDataset",
+      "WineDataset"
+    ],
+    "sn_le_gpt3_within": [
+      "AusBeerDataset",
+      "MonthlyMilkDataset"
+    ],
+    "ets_le_gpt3_within": [
+      "AusBeerDataset"
+    ],
+    "oracle": [
+      3,
+      8
+    ]
+  },
+  "monash_counts": {
+    "M1": {
+      "k": 8,
+      "n": 17,
+      "k105": 10,
+      "geomean": 1.3972012487247434
+    },
+    "M1s": {
+      "k": 2,
+      "n": 5,
+      "k105": 2,
+      "geomean": 2.0113547451666105
+    },
+    "M2": {
+      "k": 6,
+      "n": 17,
+      "k105": 7,
+      "geomean": 1.6256750031125082
+    },
+    "D5": {
+      "k": 6,
+      "n": 17,
+      "k105": 9,
+      "geomean": 1.3228812200408724
+    }
+  }
+}

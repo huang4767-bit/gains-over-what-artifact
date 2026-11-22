@@ -1,0 +1,155 @@
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:98: def denormalize(values, norm_mean, norm_std):
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:228: pred = denormalize(pred_norm, norm_mean, norm_std)
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:229: gt = denormalize(gt_norm, norm_mean, norm_std)
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:307: "mse_normalized": mse_norm,
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:308: "rmse_normalized": rmse_norm,
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:309: "mae_normalized": mae_norm,
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:322: print("\n[Normalized Space]")
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:323: print(f"MSE:  {metrics['mse_normalized']:.6f}")
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:324: print(f"RMSE: {metrics['rmse_normalized']:.6f}")
+[scaling] llm_egt_forecaster/evaluate_checkpoint.py:325: print(f"MAE:  {metrics['mae_normalized']:.6f}")
+[scaling] llm_egt_forecaster/src/dataset.py:41: # --- Z-Score Normalization ---
+[scaling] llm_egt_forecaster/src/dataset.py:42: # Compute normalization parameters from the historical time series
+[scaling] llm_egt_forecaster/src/dataset.py:49: # Normalize the time series
+[scaling] llm_egt_forecaster/src/dataset.py:50: normalized_ts = (ts_tensor - norm_mean) / (norm_std + eps)
+[scaling] llm_egt_forecaster/src/dataset.py:51: time_series_str = ", ".join(map(lambda x: f"{x:.4f}", normalized_ts.tolist()))
+[scaling] llm_egt_forecaster/src/dataset.py:53: # Normalize the ground truth with the SAME mean/std from history
+[scaling] llm_egt_forecaster/src/dataset.py:56: normalized_gt = (ground_truth - norm_mean) / (norm_std + eps)
+[scaling] llm_egt_forecaster/src/dataset.py:68: "ground_truth": normalized_gt,  # Normalized ground truth
+[scaling] llm_egt_forecaster/src/dataset.py:69: "norm_mean": norm_mean,  # For denormalization during inference/logging
+[scaling] llm_egt_forecaster/src/dataset.py:70: "norm_std": norm_std,    # For denormalization during inference/logging
+[scaling] llm_egt_forecaster/src/dataset.py:77: Also batches normalization parameters for denormalization.
+[scaling] llm_egt_forecaster/src/dataset.py:82: ground_truths = torch.stack([item["ground_truth"] for item in batch])  # Stack tensors (normalized)
+[scaling] llm_egt_forecaster/src/dataset.py:85: # Stack normalization parameters for denormalization
+[scaling] llm_egt_forecaster/src/dataset.py:92: "ground_truth": ground_truths,  # Tensor (normalized)
+[scaling] llm_egt_forecaster/src/dataset.py:93: "norm_mean": norm_means,  # Tensor for denormalization
+[scaling] llm_egt_forecaster/src/dataset.py:94: "norm_std": norm_stds,    # Tensor for denormalization
+[scaling] llm_egt_forecaster/src/dataset.py:190: print("\nTime Series (first sample in batch, NORMALIZED):")
+[scaling] llm_egt_forecaster/src/dataset.py:200: print("\nGround Truth Tensor (first sample in batch, NORMALIZED):")
+[scaling] llm_egt_forecaster/src/dataset.py:204: # 5. Verify normalization parameters
+[scaling] llm_egt_forecaster/src/dataset.py:205: print("\n--- Normalization Verification ---")
+[scaling] llm_egt_forecaster/src/dataset.py:209: # Denormalization check
+[scaling] llm_egt_forecaster/src/dataset.py:210: normalized_gt = batch['ground_truth'][0]
+[scaling] llm_egt_forecaster/src/dataset.py:211: denormalized_gt = normalized_gt * (batch['norm_std'][0] + 1e-8) + batch['norm_mean'][0]
+[scaling] llm_egt_forecaster/src/dataset.py:212: print(f"\nDenormalized ground truth (first sample): {denormalized_gt.item():.4f}")
+[scaling] llm_egt_forecaster/src/engine/loss.py:44: # Mean Absolute Percentage Error - normalized, scale-invariant
+[scaling] llm_egt_forecaster/src/engine/loss.py:73: embeddings = F.normalize(embeddings, p=2, dim=1)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:61: def _denormalize(self, normalized_values, norm_mean, norm_std):
+[scaling] llm_egt_forecaster/src/engine/trainer.py:63: Denormalize values back to original scale.
+[scaling] llm_egt_forecaster/src/engine/trainer.py:66: normalized_values: Tensor of normalized values (batch_size, ...)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:71: Tensor of denormalized values in original scale
+[scaling] llm_egt_forecaster/src/engine/trainer.py:75: if normalized_values.dim() > norm_mean.dim():
+[scaling] llm_egt_forecaster/src/engine/trainer.py:76: # Add dimensions to match normalized_values shape
+[scaling] llm_egt_forecaster/src/engine/trainer.py:77: for _ in range(normalized_values.dim() - norm_mean.dim()):
+[scaling] llm_egt_forecaster/src/engine/trainer.py:80: return normalized_values * (norm_std + eps) + norm_mean
+[scaling] llm_egt_forecaster/src/engine/trainer.py:130: # Normalized metrics (for model training)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:133: # Denormalized metrics (for human understanding of actual prediction accuracy)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:144: # Get normalization parameters for denormalization
+[scaling] llm_egt_forecaster/src/engine/trainer.py:149: # Loss is calculated in NORMALIZED space for proper gradient computation
+[scaling] llm_egt_forecaster/src/engine/trainer.py:153: # Calculate metrics in NORMALIZED space
+[scaling] llm_egt_forecaster/src/engine/trainer.py:160: # Denormalize for reporting real-world metrics
+[scaling] llm_egt_forecaster/src/engine/trainer.py:161: predictions_denorm = self._denormalize(predictions, norm_mean, norm_std)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:162: ground_truth_denorm = self._denormalize(ground_truth, norm_mean, norm_std)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:164: # Calculate metrics in ORIGINAL (denormalized) space
+[scaling] llm_egt_forecaster/src/engine/trainer.py:179: # Normalized metrics (for training)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:185: # Denormalized metrics (for reporting)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:192: print(f"Val Loss (normalized): {avg_val_loss:.4f}")
+[scaling] llm_egt_forecaster/src/engine/trainer.py:193: print(f"\n[Normalized Space Metrics - for model training]")
+[scaling] llm_egt_forecaster/src/engine/trainer.py:203: # Normalized metrics (primary for training)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:207: # Denormalized metrics (for reporting)
+[scaling] llm_egt_forecaster/src/engine/trainer.py:303: # Normalize advantages by standard deviation to stabilize l_pg
+[inverse] llm_egt_forecaster/evaluate_checkpoint.py:98: def denormalize(values, norm_mean, norm_std):
+[inverse] llm_egt_forecaster/evaluate_checkpoint.py:228: pred = denormalize(pred_norm, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/evaluate_checkpoint.py:229: gt = denormalize(gt_norm, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/src/dataset.py:69: "norm_mean": norm_mean,  # For denormalization during inference/logging
+[inverse] llm_egt_forecaster/src/dataset.py:70: "norm_std": norm_std,    # For denormalization during inference/logging
+[inverse] llm_egt_forecaster/src/dataset.py:77: Also batches normalization parameters for denormalization.
+[inverse] llm_egt_forecaster/src/dataset.py:85: # Stack normalization parameters for denormalization
+[inverse] llm_egt_forecaster/src/dataset.py:93: "norm_mean": norm_means,  # Tensor for denormalization
+[inverse] llm_egt_forecaster/src/dataset.py:94: "norm_std": norm_stds,    # Tensor for denormalization
+[inverse] llm_egt_forecaster/src/dataset.py:209: # Denormalization check
+[inverse] llm_egt_forecaster/src/dataset.py:211: denormalized_gt = normalized_gt * (batch['norm_std'][0] + 1e-8) + batch['norm_mean'][0]
+[inverse] llm_egt_forecaster/src/dataset.py:212: print(f"\nDenormalized ground truth (first sample): {denormalized_gt.item():.4f}")
+[inverse] llm_egt_forecaster/src/engine/trainer.py:61: def _denormalize(self, normalized_values, norm_mean, norm_std):
+[inverse] llm_egt_forecaster/src/engine/trainer.py:63: Denormalize values back to original scale.
+[inverse] llm_egt_forecaster/src/engine/trainer.py:71: Tensor of denormalized values in original scale
+[inverse] llm_egt_forecaster/src/engine/trainer.py:133: # Denormalized metrics (for human understanding of actual prediction accuracy)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:144: # Get normalization parameters for denormalization
+[inverse] llm_egt_forecaster/src/engine/trainer.py:160: # Denormalize for reporting real-world metrics
+[inverse] llm_egt_forecaster/src/engine/trainer.py:161: predictions_denorm = self._denormalize(predictions, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:162: ground_truth_denorm = self._denormalize(ground_truth, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:164: # Calculate metrics in ORIGINAL (denormalized) space
+[inverse] llm_egt_forecaster/src/engine/trainer.py:185: # Denormalized metrics (for reporting)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:207: # Denormalized metrics (for reporting)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:444: # Get denormalization parameters
+[inverse] llm_egt_forecaster/src/engine/trainer.py:463: # Denormalize for original scale metrics
+[inverse] llm_egt_forecaster/src/engine/trainer.py:464: agent_pred_denorm = self._denormalize(agent_pred, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:465: ground_truth_denorm = self._denormalize(ground_truth, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/src/engine/trainer.py:516: pred_values = agent_pred_denorm[0].detach().cpu().numpy()  # First sample, denormalized
+[inverse] llm_egt_forecaster/train.py:259: # Denormalized metrics (for reporting real-world metrics)
+[inverse] llm_egt_forecaster/train.py:282: # Get normalization parameters for denormalization
+[inverse] llm_egt_forecaster/train.py:291: # Denormalize for reporting real-world metrics (same as validation)
+[inverse] llm_egt_forecaster/train.py:293: predictions_denorm = trainer._denormalize(predictions, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/train.py:294: ground_truth_denorm = trainer._denormalize(ground_truth, norm_mean, norm_std)
+[inverse] llm_egt_forecaster/train.py:296: # Calculate metrics in ORIGINAL (denormalized) space
+[inverse] llm_egt_forecaster/train.py:313: # Denormalized metrics (for reporting)
+[metric] llm_egt_forecaster/configs/base_config.py:65: # Options: 'mse', 'mae', 'mape', 'rmse', 'huber'
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:116: "eval_index\tglobal_index\tdate\tregion\tmse\trmse\tmae\tmape_percent\tnews_count\n"
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:125: f"{item['mse']:.6f}\t"
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:126: f"{item['rmse']:.6f}\t"
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:247: per_sample_rmse = torch.sqrt(per_sample_mse)
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:263: "mse": float(per_sample_mse[i].item()),
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:264: "rmse": float(per_sample_rmse[i].item()),
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:282: "mse": error_item.get("mse"),
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:283: "rmse": error_item.get("rmse"),
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:291: mse = total_sse / total_points
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:292: rmse = mse ** 0.5
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:297: rmse_norm = mse_norm ** 0.5
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:303: "mse": mse,
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:304: "rmse": rmse,
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:308: "rmse_normalized": rmse_norm,
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:318: print(f"MSE:  {metrics['mse']:.6f}")
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:319: print(f"RMSE: {metrics['rmse']:.6f}")
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:323: print(f"MSE:  {metrics['mse_normalized']:.6f}")
+[metric] llm_egt_forecaster/evaluate_checkpoint.py:324: print(f"RMSE: {metrics['rmse_normalized']:.6f}")
+[metric] llm_egt_forecaster/src/agent.py:20: - "default": Prediction LoRA (trained via MSE loss)
+[metric] llm_egt_forecaster/src/engine/loss.py:22: Calculate prediction loss. Supports MSE, MAE, or MAPE based on config.
+[metric] llm_egt_forecaster/src/engine/loss.py:29: Prediction loss (MSE, MAE, or MAPE)
+[metric] llm_egt_forecaster/src/engine/loss.py:36: # Get loss type from config (default: 'mse')
+[metric] llm_egt_forecaster/src/engine/loss.py:37: loss_type = getattr(self.config, 'PREDICTION_LOSS_TYPE', 'mse').lower()
+[metric] llm_egt_forecaster/src/engine/loss.py:51: elif loss_type == 'rmse':
+[metric] llm_egt_forecaster/src/engine/loss.py:53: mse = F.mse_loss(aggregated_prediction, ground_truth)
+[metric] llm_egt_forecaster/src/engine/loss.py:54: rmse_loss = torch.sqrt(mse)
+[metric] llm_egt_forecaster/src/engine/loss.py:55: return rmse_loss
+[metric] llm_egt_forecaster/src/engine/loss.py:57: # Huber loss - combines benefits of MSE and MAE
+[metric] llm_egt_forecaster/src/engine/loss.py:62: # Default: MSE (Mean Squared Error)
+[metric] llm_egt_forecaster/src/engine/loss.py:117: # Calculate MSE loss for prediction
+[metric] llm_egt_forecaster/src/engine/trainer.py:183: avg_rmse_norm = avg_mse_norm ** 0.5
+[metric] llm_egt_forecaster/src/engine/trainer.py:188: avg_rmse_denorm = avg_mse_denorm ** 0.5
+[metric] llm_egt_forecaster/src/engine/trainer.py:194: print(f"  MSE: {avg_mse_norm:.4f}, RMSE: {avg_rmse_norm:.4f}, MAE: {avg_mae_norm:.4f}")
+[metric] llm_egt_forecaster/src/engine/trainer.py:196: print(f"  MSE: {avg_mse_denorm:.4f}")
+[metric] llm_egt_forecaster/src/engine/trainer.py:197: print(f"  RMSE: {avg_rmse_denorm:.4f}")
+[metric] llm_egt_forecaster/src/engine/trainer.py:205: "val_rmse": avg_rmse_norm,
+[metric] llm_egt_forecaster/src/engine/trainer.py:209: "val_rmse_original": avg_rmse_denorm,
+[metric] llm_egt_forecaster/src/engine/trainer.py:349: mse = F.mse_loss(aggregated_prediction, ground_truth).item()
+[metric] llm_egt_forecaster/src/engine/trainer.py:350: rmse = np.sqrt(mse)
+[metric] llm_egt_forecaster/src/engine/trainer.py:359: mse = rmse = mae = mape = 0.0
+[metric] llm_egt_forecaster/src/engine/trainer.py:365: "mse": mse,
+[metric] llm_egt_forecaster/src/engine/trainer.py:366: "rmse": rmse,
+[metric] llm_egt_forecaster/src/engine/trainer.py:460: rmse_norm = torch.sqrt(mse_norm)
+[metric] llm_egt_forecaster/src/engine/trainer.py:468: rmse_denorm = torch.sqrt(mse_denorm)
+[metric] llm_egt_forecaster/src/engine/trainer.py:478: loss_type = getattr(self.config, 'PREDICTION_LOSS_TYPE', 'mse').lower()
+[metric] llm_egt_forecaster/src/engine/trainer.py:483: elif loss_type == 'rmse':
+[metric] llm_egt_forecaster/src/engine/trainer.py:484: reward = -rmse_norm.item()
+[metric] llm_egt_forecaster/src/engine/trainer.py:490: # Default: MSE
+[metric] llm_egt_forecaster/src/engine/trainer.py:494: print(f"    MSE: {mse_norm.item():.4f}, RMSE: {rmse_norm.item():.4f}, MAE: {mae_norm.item():.4f}")
+[metric] llm_egt_forecaster/src/engine/trainer.py:496: print(f"    MSE: {mse_denorm.item():.4f}")
+[metric] llm_egt_forecaster/src/engine/trainer.py:497: print(f"    RMSE: {rmse_denorm.item():.4f}")
+[metric] llm_egt_forecaster/src/engine/training_logger.py:73: - mse: Mean Squared Error
+[metric] llm_egt_forecaster/src/engine/training_logger.py:74: - rmse: Root Mean Squared Error
+[metric] llm_egt_forecaster/src/engine/training_logger.py:98: "mse": metrics.get("mse", 0.0),
+[metric] llm_egt_forecaster/src/engine/training_logger.py:99: "rmse": metrics.get("rmse", 0.0),
+[metric] llm_egt_forecaster/src/models/evolutionary_framework.py:493: # Get loss type from config (default: 'mse')
+[metric] llm_egt_forecaster/src/models/evolutionary_framework.py:494: loss_type = getattr(self.config, 'PREDICTION_LOSS_TYPE', 'mse').lower()
+[metric] llm_egt_forecaster/src/models/evolutionary_framework.py:506: elif loss_type == 'rmse':
+[metric] llm_egt_forecaster/src/models/evolutionary_framework.py:507: # Negative RMSE as reward

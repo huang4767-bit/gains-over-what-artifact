@@ -1,0 +1,14 @@
+[2026-11-17 12:45:38] === monash start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['monash', '--r2-native-period', '--out', '<repo>\\recheck\\round1\\out', '--monash-dir', '<data>\\monash_tsf', '--llmtime-root', '<data>\\llmtime', '--r12-monash-csv', '<repo>\\llmtime_case\\out\\monash_per_dataset.csv', '--datasets', 'solar_weekly,traffic_weekly,nn5_weekly,australian_electricity_demand']
+[2026-11-17 12:45:38] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-17 12:46:47] solar_weekly                   n=137/137 H=5 m=52 naive=1729.41 LastValue=1729.41 (V1 rel -0.0000) R1=1729.41 R2=1203.37 GPT-3=2049.1 r_R2=0.5873 fallbacks median2=0 single=0 R1=0 | origins=137 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=137 (69.0 s)
+[2026-11-17 12:46:47] solar_weekly: NOTE R1 = naive on 137/137 series (history shorter than m=52)
+[2026-11-17 13:27:24] australian_electricity_demand  n=5/5 H=336 m=48 naive=659.601 LastValue=659.601 (V1 rel +0.0000) R1=455.961 R2=464.166 GPT-3=459.966 r_R2=1.0091 fallbacks median2=0 single=0 R1=0 | origins=5 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (2436.3 s)
+[2026-11-17 13:28:34] traffic_weekly: 250/862 series, 70 s
+[2026-11-17 13:29:47] traffic_weekly: 500/862 series, 143 s
+[2026-11-17 13:30:58] traffic_weekly: 750/862 series, 214 s
+[2026-11-17 13:31:31] traffic_weekly                 n=862/862 H=8 m=52 naive=1.18558 LastValue=1.18558 (V1 rel +0.0000) R1=1.41581 R2=1.12781 GPT-3=1.17369 r_R2=0.9609 fallbacks median2=0 single=0 R1=0 | origins=862 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (246.6 s)
+[2026-11-17 13:48:40] === monash start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['monash', '--r2-native-period', '--out', '<repo>\\recheck\\round1\\out', '--monash-dir', '<data>\\monash_tsf', '--llmtime-root', '<data>\\llmtime', '--r12-monash-csv', '<repo>\\llmtime_case\\out\\monash_per_dataset.csv', '--datasets', 'nn5_weekly']
+[2026-11-17 13:48:41] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-17 13:50:52] nn5_weekly                     n=111/111 H=8 m=52 naive=16.7086 LastValue=16.7086 (V1 rel +0.0000) R1=21.7025 R2=14.8212 GPT-3=15.9195 r_R2=0.9310 fallbacks median2=0 single=0 R1=0 | origins=111 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (131.2 s)
+[2026-11-17 13:50:52] R2 tally [monash]: calls=111 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0
+[2026-11-17 13:50:52] *** POST HOC run (--r2-native-period); outputs written to POSTHOC_r2_native_period ***

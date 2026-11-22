@@ -1,0 +1,9 @@
+[2026-11-16 19:49:12] === judgecast start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['judgecast', '--out', '<repo>\\recheck\\round1\\out']
+[2026-11-16 19:49:12] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-16 19:49:12] entsoe_cache.csv not found: ENTSO-e excluded
+[2026-11-16 19:49:12] JudgeCast BE: gate=True V1 ARIMA median 1143 vs paper 1319 (rel -0.134) | r_R2 median 1.604 [1.364, 1.845] | r_R1 1.456 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:12] JudgeCast DE: gate=True V1 ARIMA median 317.9 vs paper 334.9 (rel -0.051) | r_R2 median 2.020 [1.752, 3.462] | r_R1 2.258 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:12] JudgeCast FR: gate=True V1 ARIMA median 1146 vs paper 1391 (rel -0.176) | r_R2 median 1.175 [1.044, 1.577] | r_R1 1.399 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:12] JudgeCast NP: gate=True V1 ARIMA median 49.43 vs paper 45.68 (rel +0.082) | r_R2 median 2.601 [2.038, 3.396] | r_R1 2.253 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:12] JudgeCast PJM: gate=True V1 ARIMA median 54.4 vs paper 53.99 (rel +0.008) | r_R2 median 1.737 [1.592, 1.975] | r_R1 1.923 | origins=120 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0
+[2026-11-16 19:49:12] wrote judgecast_members.csv, judgecast_datasets.csv

@@ -1,0 +1,82 @@
+LLMTime case: LLMTime public forecasts vs seasonal naive / statistical baselines (mechanical output)
+python 3.14.2, numpy 2.5.2, pandas 2.3.3
+llmtime root: <data>\llmtime
+darts csv: <data>\darts_csv
+monash dir: <data>\monash_tsf
+stat csv: <repo>\llmtime_case\out\stat_forecasts.csv
+
+== DARTS ==
+MAE definition behind darts_results_agg.csv: identified=median/mean_abs_test; best=median/mean_abs_test (48/48 within 2%); all hits: {'median/mean_abs_test': np.int64(48), 'median/range_full': np.int64(6), 'median/range_train': np.int64(0), 'median/std_test': np.int64(0), 'median/mean_abs_train': np.int64(6), 'samples/mean_abs_test': np.int64(2), 'samples/range_full': np.int64(0), 'samples/range_train': np.int64(0), 'samples/std_test': np.int64(0), 'samples/mean_abs_train': np.int64(1)}
+CRPS formula reproduces reported CRPS: 10/48 -> crps_ok=False; pickle NLL/D equals reported NLL/D: 48/48
+dataset            H    m  md5  G1  G2(match/6)  valid
+AirPassengersDataset   29  12  True  True  6/6         True
+AusBeerDataset         43   4  True  True  6/6         True
+GasRateCO2Dataset      60   1  True  True  6/6         True
+MonthlyMilkDataset     34  12  True  True  6/6         True
+SunspotsDataset       141  33  True  True  6/6         True
+WineDataset            36  12  True  True  6/6         True
+WoolyDataset           24   4  True  True  6/6         True
+HeartRateDataset      180   1  True  True  6/6         True
+valid Darts datasets: 8/8 ['AirPassengersDataset', 'AusBeerDataset', 'GasRateCO2Dataset', 'MonthlyMilkDataset', 'SunspotsDataset', 'WineDataset', 'WoolyDataset', 'HeartRateDataset']
+
+raw-scale MAE of the point forecast (LLM: pickle median; controls: point forecast)
+dataset                       GPT-3          GPT-4 ARIMA(authors)         SNaive          Naive        AutoETS      AutoARIMA      AutoTheta   bestAuthor  SN/GPT3  ETS/GPT3
+AirPassengersDataset        34.3726        34.5493        24.0337        64.7586        81.4483        55.6466        28.5671        20.7192      24.0337   1.8840    1.6189
+AusBeerDataset              16.1270        27.6820        17.1338        14.2558        96.3488        12.1201        12.7191        37.0227      10.3936   0.8840    0.7515
+GasRateCO2Dataset            3.4958         3.2922         2.3681         2.2900         2.2900         2.2900         2.3253         2.2882       2.2731   0.6551    0.6551
+MonthlyMilkDataset           9.6772        22.0264        37.1941         9.5588        85.7059         9.9001        30.0304        12.6522      30.3304   0.9878    1.0230
+SunspotsDataset             47.3390        78.0700        43.5632        43.8745        48.2426        48.0706        46.8780        39.8841      43.5632   0.9268    1.0155
+WineDataset               1569.3237      2407.8518      2306.7029      2246.3333      4075.2778      4026.9571      2061.9803      1910.1855    2306.7029   1.4314    2.5660
+WoolyDataset               808.7309      1073.9925       588.7780       824.9167      1210.3333       710.0001       730.9483       716.2748     382.0880   1.0200    0.8779
+HeartRateDataset             6.2111        23.9513         5.5609         5.9192         5.9192         5.9192         5.6693         5.9172       5.4932   0.9530    0.9530
+
+counts written in advance over valid datasets: #(control <= LLM) / #compared   [also r<=1.05, r<=0.95; geomean r]
+P1       SNaive vs GPT-3              [mae_raw]: 5/8   r<=1.05: 6/8   r<=0.95: 3/8   geomean r = 1.0420
+S1      AutoETS vs GPT-3              [mae_raw]: 4/8   r<=1.05: 6/8   r<=0.95: 3/8   geomean r = 1.0746
+S2a      SNaive vs GPT-4              [mae_raw]: 7/8   r<=1.05: 7/8   r<=0.95: 7/8   geomean r = 0.6424
+S2b     AutoETS vs GPT-4              [mae_raw]: 6/8   r<=1.05: 6/8   r<=0.95: 6/8   geomean r = 0.6625
+S3a      SNaive vs LLaMA-2 70B(agg)   [mae_raw]: 6/8   r<=1.05: 6/8   r<=0.95: 4/8   geomean r = 0.9382
+S3b     AutoETS vs LLaMA-2 70B(agg)   [mae_raw]: 5/8   r<=1.05: 7/8   r<=0.95: 4/8   geomean r = 0.9675
+S5a      SNaive vs GPT-3              [crps]: 3/8   r<=1.05: 3/8   r<=0.95: 3/8   geomean r = 1.1928
+S5b     AutoETS vs GPT-3              [crps]: 3/8   r<=1.05: 3/8   r<=0.95: 3/8   geomean r = 1.2324
+S5c      SNaive vs LLaMA-2 70B(agg)   [crps]: 0/0   r<=1.05: 0/0   r<=0.95: 0/0   geomean r = nan
+D1        Naive vs GPT-3              [mae_raw]: 2/8   r<=1.05: 3/8   r<=0.95: 1/8   geomean r = 2.0484
+D2    AutoARIMA vs GPT-3              [mae_raw]: 6/8   r<=1.05: 6/8   r<=0.95: 5/8   geomean r = 1.0478
+D3    AutoTheta vs GPT-3              [mae_raw]: 5/8   r<=1.05: 5/8   r<=0.95: 4/8   geomean r = 1.0031
+S4   GPT-3 lowest MAE vs the authors' 5 baselines: 2 ['MonthlyMilkDataset', 'WineDataset']
+     GPT-3 lowest MAE vs authors' 5 + SNaive + AutoETS: 1 ['WineDataset']
+P2   GPT-3 beats ARIMA(authors) on 3 ['AusBeerDataset', 'MonthlyMilkDataset', 'WineDataset']; of these SNaive <= GPT-3 on 2 ['AusBeerDataset', 'MonthlyMilkDataset']; AutoETS <= GPT-3 on 1 ['AusBeerDataset']
+D4   SNaive <= best of 7 pickle LLM variants (oracle, per dataset): 3/8
+
+== MONASH ==
+dataset                         n    H  valid  order                 SN       GPT-3    LLaMA-2  bestMonash  SN/GPT3
+weather                        3010   30  True   seed0-permutation       2.4730     2.3233     2.0936     2.0200   1.0644
+covid_deaths                    266   30  True   seed0-permutation     416.2719   304.6855    66.1411    85.5900   1.3662
+solar_weekly                    137    5  True   seed0-permutation    1729.4093  2049.0957  1457.1886   576.3500   0.8440
+tourism_monthly                 366   24  True   seed0-permutation    1980.2072  4724.9460  3145.4784  1871.6900   0.4191
+tourism_quarterly               427    8  True   seed0-permutation    11405.4471 14121.0919  9311.9772  7656.4900   0.8077
+tourism_yearly                  518    4  True   seed0-permutation    99456.0541  1.401e+05 98285.7930 69905.4700   0.7100
+australian_electricity_demand     5  336  True   seed0-permutation     455.9605   459.9658   560.4789   213.8300   0.9913
+pedestrian_counts                66   24  True   seed0-permutation      65.5991    70.2070    65.9221    43.4100   0.9344
+traffic_hourly                 not valid: stored maes has shape (20, 43), expected one value per series
+traffic_weekly                  862    8  True   seed0-permutation       1.4158     1.1737     1.1493     1.1100   1.2063
+hospital                        767   12  True   seed0-permutation      20.0060    24.6239    22.7491    17.4300   0.8125
+fred_md                         107   12  True   seed0-permutation    5385.5292  2013.4892  1781.4105  1989.9700   2.6747
+us_births                         1   30  True   seed0-permutation     466.6667   459.4363   638.8183   399.0000   1.0157
+nn5_weekly                      111    8  True   seed0-permutation      21.7025    15.9195    15.6044    14.1900   1.3633
+nn5_daily                      not valid: stored maes is not a flat numeric vector (ValueError: setting an array element with a sequence. The requested array has an inhomogeneous shape after 1 dimensions. The detected shape was (19,) + inhomogeneous part.)
+saugeenday                        1   30  True   seed0-permutation      43.6667    28.6363    23.0098    21.2800   1.5249
+cif_2016                         72   12  True   seed0-permutation    6.505e+05  7.151e+05  6.841e+05  4.691e+05   0.9097
+bitcoin                          18   30  True   seed0-permutation    1.773e+18  1.757e+18  8.565e+17   6.66e+17   1.0095
+sunspot                           1   30  True   seed0-permutation      15.5333     0.0732     0.2782     0.1300 212.2040
+solar_10_minutes                137   60  True   seed0-permutation       0.5786     0.4728        nan        nan   1.2238
+valid Monash datasets in the paper table: 17/19
+M1   mae_snaive <= mae_gpt3: 8/17   r<=1.05: 10/17   geomean r = 1.3972
+M1s  mae_snaive_alt <= mae_gpt3: 2/5   r<=1.05: 2/5   geomean r = 2.0114
+M2   mae_snaive <= mae_llama2: 6/17   r<=1.05: 7/17   geomean r = 1.6257
+D5   mae_naive <= mae_gpt3: 6/17   r<=1.05: 9/17   geomean r = 1.3229
+M3   GPT-3 beats all 12 Monash baselines on 1 ['sunspot']; SNaive <= GPT-3 on 0/1 of these
+D6   mean rank of GPT-3 among 12 Monash baselines: 8.76/13; with SNaive added: 9.24/14
+G5   (diagnostic) our naive vs authors' 'Last Value' MAE: median rel diff 0.0000 over 17 datasets (their naive may use the full history / another convention)
+
+pickle loader: inert shell used for ['data.serialize.SerializerSettings'] (14 references)

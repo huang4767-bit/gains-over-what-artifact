@@ -1,0 +1,14 @@
+[2026-11-18 17:06:58] === n2f start | ur_c.py v1 (2026-11-18) | argv ['n2f', '--json', '<data>\\ur_c\\n2f\\AULF_test_data_2021.json']
+[2026-11-18 17:06:58] versions: python 3.14.2 | statsforecast 2.1.1 | statsmodels 0.15.0 | numpy 2.5.4 | pandas 2.3.3 | pyarrow 26.0.1
+[2026-11-18 17:06:58] selftest: 16/16 PASS
+[2026-11-18 17:06:58] input <data>\ur_c\n2f\AULF_test_data_2021.json SHA256 C56C5660942CD4672A17CC6C64653189CA11C52D9ECE45990588BDC5413DA92B size 153249
+[2026-11-18 17:06:58] N2F structure gate [criteria §5.6]: windows 100, failures 0
+[2026-11-18 17:07:31] R2 tally [N2F R2 primary (season_length 24)]: calls=100 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0 median3=100 median2=0 single=0 | 33 s
+[2026-11-18 17:07:54] R2 tally [N2F R2 sensitivity (native period 48)]: calls=100 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0 median3=100 median2=0 single=0
+[2026-11-18 17:07:54] N2F Electricity (protocol not verified, descriptive) -- ur_c.py v1 (2026-11-18)
+[2026-11-18 17:07:54] windows 100, points 4800; pooled RMSE (unrounded): R1 488.48701524665245  R2 839.621103346161
+[2026-11-18 17:07:54] r(R2) = 2.9944759204898928  (P1 True, P2 True; not counted)  r(R1) = 1.742169889249447
+[2026-11-18 17:07:54] sensitivity [criteria §5.10] R2 native period 48: RMSE 838.2405691478256  r 2.9895522991113292
+[2026-11-18 17:07:54] R2 tally [N2F R2 primary (season_length 24)]: calls=100 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0 median3=100 median2=0 single=0
+[2026-11-18 17:07:54] R2 tally [N2F R2 sensitivity (native period 48)]: calls=100 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0 median3=100 median2=0 single=0
+[2026-11-18 17:07:54] === n2f end | exit code 0

@@ -1,0 +1,50 @@
+[2026-11-16 17:54:01] === monash start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['monash', '--out', '<repo>\\recheck\\round1\\out', '--monash-dir', '<data>\\monash_tsf', '--llmtime-root', '<data>\\llmtime', '--r12-monash-csv', '<repo>\\llmtime_case\\out\\monash_per_dataset.csv', '--datasets', 'covid_deaths,solar_weekly,australian_electricity_demand,pedestrian_counts,fred_md,us_births,nn5_weekly,saugeenday,cif_2016,bitcoin,sunspot']
+[2026-11-16 17:54:01] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-16 17:58:52] covid_deaths: 250/266 series, 291 s
+[2026-11-16 17:59:14] covid_deaths                   n=266/266 H=30 m=7 naive=353.709 LastValue=353.709 (V1 rel -0.0000) R1=416.272 R2=88.3952 GPT-3=304.686 r_R2=0.2901 fallbacks median2=0 single=0 R1=0 | origins=266 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (313.4 s)
+[2026-11-16 17:59:55] solar_weekly                   n=137/137 H=5 m=52 naive=1729.41 LastValue=1729.41 (V1 rel -0.0000) R1=1729.41 R2=1203.37 GPT-3=2049.1 r_R2=0.5873 fallbacks median2=0 single=0 R1=0 | origins=137 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=137 (41.1 s)
+[2026-11-16 17:59:55] solar_weekly: NOTE R1 = naive on 137/137 series (history shorter than m=52)
+[2026-11-16 18:05:15] australian_electricity_demand  n=5/5 H=336 m=48 naive=659.601 LastValue=659.601 (V1 rel +0.0000) R1=455.961 R2=617.521 GPT-3=459.966 r_R2=1.3425 fallbacks median2=0 single=0 R1=0 | origins=5 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (318.8 s)
+[2026-11-16 19:17:26] pedestrian_counts              n=66/66 H=24 m=24 naive=170.884 LastValue=170.884 (V1 rel +0.0000) R1=65.5991 R2=64.9327 GPT-3=70.207 r_R2=0.9249 fallbacks median2=0 single=0 R1=0 | origins=66 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (4330.8 s)
+[2026-11-16 19:26:52] fred_md                        n=107/107 H=12 m=12 naive=2825.67 LastValue=2825.67 (V1 rel +0.0000) R1=5385.53 R2=1853.87 GPT-3=2013.49 r_R2=0.9207 fallbacks median2=0 single=0 R1=0 | origins=107 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (566.4 s)
+[2026-11-16 19:27:02] us_births                      n=1/1 H=30 m=7 naive=1152.67 LastValue=1152.67 (V1 rel +0.0000) R1=466.667 R2=413.024 GPT-3=459.436 r_R2=0.8990 fallbacks median2=0 single=0 R1=0 | origins=1 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (9.5 s)
+[2026-11-16 19:29:43] nn5_weekly                     n=111/111 H=8 m=52 naive=16.7086 LastValue=16.7086 (V1 rel +0.0000) R1=21.7025 R2=14.9767 GPT-3=15.9195 r_R2=0.9408 fallbacks median2=0 single=0 R1=0 | origins=111 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (161.0 s)
+[2026-11-16 19:29:44] saugeenday                     n=1/1 H=30 m=7 naive=21.4967 LastValue=21.4967 (V1 rel +0.0000) R1=43.6667 R2=21.3855 GPT-3=28.6363 r_R2=0.7468 fallbacks median2=0 single=0 R1=0 | origins=1 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (1.5 s)
+[2026-11-16 19:30:29] cif_2016                       n=72/72 H=12 m=12 naive=386526 LastValue=386526 (V1 rel +0.0000) R1=650536 R2=1.93374e+06 GPT-3=715086 r_R2=2.7042 fallbacks median2=0 single=0 R1=0 | origins=72 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (45.4 s)
+[2026-11-16 19:31:48] bitcoin                        n=18/18 H=30 m=7 naive=7.77728e+17 LastValue=7.77728e+17 (V1 rel +0.0000) R1=1.77339e+18 R2=1.48772e+18 GPT-3=1.75671e+18 r_R2=0.8469 fallbacks median2=0 single=0 R1=0 | origins=18 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (78.9 s)
+[2026-11-16 19:31:54] sunspot                        n=1/1 H=30 m=7 naive=3.93333 LastValue=3.93333 (V1 rel -0.0000) R1=15.5333 R2=3.95019 GPT-3=0.0732 r_R2=53.9643 fallbacks median2=0 single=0 R1=0 | origins=1 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (5.8 s)
+[2026-11-16 19:31:54] R2 tally [monash]: calls=785 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0
+[2026-11-16 19:31:56] === monash start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['monash', '--out', '<repo>\\recheck\\round1\\out', '--monash-dir', '<data>\\monash_tsf', '--llmtime-root', '<data>\\llmtime', '--r12-monash-csv', '<repo>\\llmtime_case\\out\\monash_per_dataset.csv', '--datasets', 'tourism_monthly,tourism_quarterly,tourism_yearly,hospital,traffic_weekly']
+[2026-11-16 19:31:56] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-16 20:03:17] tourism_monthly: 250/366 series, 1881 s
+[2026-11-16 20:18:23] tourism_monthly                n=366/366 H=24 m=12 naive=5636.83 LastValue=5636.83 (V1 rel +0.0000) R1=1980.21 R2=1921.38 GPT-3=4724.95 r_R2=0.4066 fallbacks median2=0 single=0 R1=0 | origins=366 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (2787.6 s)
+[2026-11-16 20:21:02] tourism_quarterly: 250/427 series, 158 s
+[2026-11-16 20:22:58] tourism_quarterly              n=427/427 H=8 m=4 naive=15845.1 LastValue=15845.1 (V1 rel +0.0000) R1=11405.4 R2=8555.19 GPT-3=14121.1 r_R2=0.6058 fallbacks median2=0 single=0 R1=0 | origins=427 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (274.9 s)
+[2026-11-16 20:23:27] tourism_yearly: 250/518 series, 28 s
+[2026-11-16 20:23:57] tourism_yearly: 500/518 series, 58 s
+[2026-11-16 20:23:59] tourism_yearly                 n=518/518 H=4 m=1 naive=99456.1 LastValue=99456.1 (V1 rel +0.0000) R1=99456.1 R2=82153.6 GPT-3=140082 r_R2=0.5865 fallbacks median2=0 single=0 R1=0 | origins=518 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (60.5 s)
+[2026-11-16 20:28:38] traffic_weekly: 250/862 series, 279 s
+[2026-11-16 20:33:34] traffic_weekly: 500/862 series, 575 s
+[2026-11-16 20:38:40] traffic_weekly: 750/862 series, 881 s
+[2026-11-16 20:40:41] traffic_weekly                 n=862/862 H=8 m=52 naive=1.18558 LastValue=1.18558 (V1 rel +0.0000) R1=1.41581 R2=1.12746 GPT-3=1.17369 r_R2=0.9606 fallbacks median2=0 single=0 R1=0 | origins=862 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (1002.5 s)
+[2026-11-16 20:43:52] hospital: 250/767 series, 191 s
+[2026-11-16 20:47:17] hospital: 500/767 series, 396 s
+[2026-11-16 20:50:03] hospital: 750/767 series, 561 s
+[2026-11-16 20:50:17] hospital                       n=767/767 H=12 m=12 naive=24.0657 LastValue=24.0657 (V1 rel +0.0000) R1=20.006 R2=17.994 GPT-3=24.6239 r_R2=0.7308 fallbacks median2=0 single=0 R1=0 | origins=767 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (575.6 s)
+[2026-11-16 20:50:17] R2 tally [monash]: calls=2940 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0
+[2026-11-16 20:50:19] === monash start | python 3.14.2 | numpy 2.5.4 | pandas 2.3.3 | argv ['monash', '--out', '<repo>\\recheck\\round1\\out', '--monash-dir', '<data>\\monash_tsf', '--llmtime-root', '<data>\\llmtime', '--r12-monash-csv', '<repo>\\llmtime_case\\out\\monash_per_dataset.csv', '--datasets', 'weather']
+[2026-11-16 20:50:19] statsforecast 2.1.1 | statsmodels 0.15.0
+[2026-11-16 20:56:36] weather: 250/3010 series, 372 s
+[2026-11-16 21:04:49] weather: 500/3010 series, 865 s
+[2026-11-16 21:19:48] weather: 750/3010 series, 1763 s
+[2026-11-16 21:26:50] weather: 1000/3010 series, 2186 s
+[2026-11-16 21:32:46] weather: 1250/3010 series, 2541 s
+[2026-11-16 21:39:47] weather: 1500/3010 series, 2963 s
+[2026-11-16 21:46:02] weather: 1750/3010 series, 3337 s
+[2026-11-16 21:51:52] weather: 2000/3010 series, 3687 s
+[2026-11-16 21:58:36] weather: 2250/3010 series, 4091 s
+[2026-11-16 22:08:51] weather: 2500/3010 series, 4707 s
+[2026-11-16 22:17:20] weather: 2750/3010 series, 5215 s
+[2026-11-16 22:27:04] weather: 3000/3010 series, 5799 s
+[2026-11-16 22:27:20] weather                        n=3010/3010 H=30 m=7 naive=2.36219 LastValue=2.36219 (V1 rel +0.0000) R1=2.47304 R2=2.23525 GPT-3=2.32335 r_R2=0.9621 fallbacks median2=0 single=0 R1=0 | origins=3010 fail E/T/A=0/0/0 median2=0 single=0 allfail->R1=0 R1-period->naive=0 (5815.2 s)
+[2026-11-16 22:27:20] R2 tally [monash]: calls=3010 all-three-failed(->R1)=0 fail_ETS=0 fail_Theta=0 fail_ARIMA=0
