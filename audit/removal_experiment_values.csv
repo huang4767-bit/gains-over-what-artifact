@@ -1,0 +1,6 @@
+"system","dataset","variant","metric","E_variant","E_strongest_numerical_baseline","baseline_name","paper_location","note"
+"Time-R1","ETTh1","w/o domain context","MSE","6.2286","6.0124","TimeMixer","Table 4 (variant); Table 2 (baseline)","Full system 5.8752. Baseline is the lowest Table 2 entry among the numerical baselines (Time-R1 and DeepSeek-R1 excluded)."
+"Time-R1","ETTm2","w/o domain context","MSE","6.3517","5.7129","TimeMixer","Table 4 (variant); Table 2 (baseline)","Full system 5.6673. TimeMixer is the lowest non-LLM baseline; the LLM-based baseline TimeLLM has 5.6695."
+"Time-R1","Wind","w/o domain context","MSE","1639.4436","1380.5264","TimeMixer","Table 4 (variant); Table 2 (baseline)","Full system 1353.9381."
+"MemCast","ETTh","w/o All","MSE","8.041","7.913","TimeXer","Table 5 (variant); Table 2 (baseline)","Variant is 1.6% above the baseline."
+"MemCast","PJM","w/o All","MSE","42.315","84.743","TimeXer","Table 5 (variant); Table 2 (baseline)","Variant is 50.1% below the baseline. Full system 30.238."

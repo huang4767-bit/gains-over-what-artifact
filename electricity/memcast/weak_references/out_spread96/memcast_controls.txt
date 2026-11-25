@@ -1,0 +1,65 @@
+== NP: test targets 2018-08-26 04:00:00 .. 2018-12-21 03:00:00 (30 windows, stride 96 h); train memory 476 windows; LEAR train 476; columns {'price': 'Price', 'x1': 'Grid load forecast', 'x2': 'Wind power forecast'}
+   SameInfo chose Ridge-s on training-only validation MSE {'LEAR-s': 11.533740742833785, 'Ridge-s': 10.895689353068665}
+   paper: MemCast MSE 36.871 MAE 3.567 | best non-LLM baseline in paper: ConvTimeNet MSE 55.857 MAE 5.111
+   R-1         MSE    115.612  iid(73.4,167.7) block7(72.9,158.0)  MAE    8.064  MSE/MemCast 3.136  MSE/best-non-LLM 2.070
+   R-3         MSE    120.769  iid(78.1,173.3) block7(83.3,166.2)  MAE    8.243  MSE/MemCast 3.275  MSE/best-non-LLM 2.162
+   R-5         MSE    122.237  iid(81.3,172.4) block7(81.1,169.0)  MAE    8.334  MSE/MemCast 3.315  MSE/best-non-LLM 2.188
+   R-10        MSE    112.042  iid(74.0,154.7) block7(77.0,155.3)  MAE    8.034  MSE/MemCast 3.039  MSE/best-non-LLM 2.006
+   R-3-online  MSE     89.915  iid(61.2,123.9) block7(59.6,119.9)  MAE    6.909  MSE/MemCast 2.439  MSE/best-non-LLM 1.610
+   SN-1d       MSE     43.047  iid(23.5,64.5) block7(22.9,64.8)  MAE    4.199  MSE/MemCast 1.168  MSE/best-non-LLM 0.771
+   SN-7d       MSE     91.462  iid(53.5,139.0) block7(57.3,124.4)  MAE    6.816  MSE/MemCast 2.481  MSE/best-non-LLM 1.637
+   LEAR-s      MSE    119.030  iid(81.3,160.1) block7(86.3,147.7)  MAE    7.296  MSE/MemCast 3.228  MSE/best-non-LLM 2.131
+   Ridge-s     MSE     52.295  iid(36.3,72.5) block7(39.7,64.5)  MAE    4.978  MSE/MemCast 1.418  MSE/best-non-LLM 0.936
+   SameInfo    MSE     52.295  iid(35.5,71.5) block7(38.8,63.8)  MAE    4.978  MSE/MemCast 1.418  MSE/best-non-LLM 0.936
+== PJM: test targets 2018-08-26 04:00:00 .. 2018-12-21 03:00:00 (30 windows, stride 96 h); train memory 476 windows; LEAR train 476; columns {'price': 'Zonal COMED price', 'x1': 'System load forecast', 'x2': 'Zonal COMED load foecast'}
+   SameInfo chose Ridge-s on training-only validation MSE {'LEAR-s': 8.91084723054671, 'Ridge-s': 7.14068025102158}
+   paper: MemCast MSE 30.238 MAE 3.575 | best non-LLM baseline in paper: Prophet MSE 63.342 MAE 6.102
+   R-1         MSE    201.630  iid(139.4,270.2) block7(156.8,256.1)  MAE   10.800  MSE/MemCast 6.668  MSE/best-non-LLM 3.183
+   R-3         MSE    157.649  iid(113.2,212.9) block7(125.4,194.6)  MAE    9.687  MSE/MemCast 5.214  MSE/best-non-LLM 2.489
+   R-5         MSE    148.027  iid(111.3,189.8) block7(121.6,176.7)  MAE    9.473  MSE/MemCast 4.895  MSE/best-non-LLM 2.337
+   R-10        MSE    145.026  iid(108.3,194.8) block7(115.2,175.3)  MAE    9.380  MSE/MemCast 4.796  MSE/best-non-LLM 2.290
+   R-3-online  MSE    142.163  iid(103.9,197.2) block7(109.2,181.2)  MAE    9.260  MSE/MemCast 4.701  MSE/best-non-LLM 2.244
+   SN-1d       MSE     40.345  iid(27.8,54.1) block7(27.2,52.5)  MAE    4.636  MSE/MemCast 1.334  MSE/best-non-LLM 0.637
+   SN-7d       MSE    106.091  iid(57.8,165.5) block7(54.6,174.2)  MAE    7.013  MSE/MemCast 3.509  MSE/best-non-LLM 1.675
+   LEAR-s      MSE    185.235  iid(140.7,233.5) block7(154.2,223.3)  MAE   10.141  MSE/MemCast 6.126  MSE/best-non-LLM 2.924
+   Ridge-s     MSE     84.791  iid(61.1,111.9) block7(59.3,109.0)  MAE    6.686  MSE/MemCast 2.804  MSE/best-non-LLM 1.339
+   SameInfo    MSE     84.791  iid(61.3,113.1) block7(58.3,108.8)  MAE    6.686  MSE/MemCast 2.804  MSE/best-non-LLM 1.339
+== BE: test targets 2016-09-02 04:00:00 .. 2016-12-28 03:00:00 (30 windows, stride 96 h); train memory 476 windows; LEAR train 476; columns {'price': 'Prices', 'x1': 'Generation forecast', 'x2': 'System load forecast'}
+   SameInfo chose Ridge-s on training-only validation MSE {'LEAR-s': 19.80963844481731, 'Ridge-s': 19.127423110443093}
+   paper: MemCast MSE 756.308 MAE 12.534 | best non-LLM baseline in paper: TimeXer MSE 887.125 MAE 14.463
+   R-1         MSE    747.798  iid(430.2,1127.8) block7(405.1,1143.2)  MAE   19.514  MSE/MemCast 0.989  MSE/best-non-LLM 0.843
+   R-3         MSE    577.656  iid(346.0,853.4) block7(322.4,869.7)  MAE   17.130  MSE/MemCast 0.764  MSE/best-non-LLM 0.651
+   R-5         MSE    529.178  iid(313.0,836.0) block7(281.1,815.9)  MAE   16.238  MSE/MemCast 0.700  MSE/best-non-LLM 0.597
+   R-10        MSE    584.182  iid(374.9,842.6) block7(352.3,830.1)  MAE   17.512  MSE/MemCast 0.772  MSE/best-non-LLM 0.659
+   R-3-online  MSE    798.078  iid(439.4,1226.0) block7(340.5,1360.1)  MAE   18.214  MSE/MemCast 1.055  MSE/best-non-LLM 0.900
+   SN-1d       MSE    557.953  iid(179.6,1190.3) block7(170.8,1125.9)  MAE   12.093  MSE/MemCast 0.738  MSE/best-non-LLM 0.629
+   SN-7d       MSE   1613.415  iid(364.7,3275.1) block7(184.5,3141.7)  MAE   17.651  MSE/MemCast 2.133  MSE/best-non-LLM 1.819
+   LEAR-s      MSE    421.835  iid(219.4,673.0) block7(196.1,688.1)  MAE   13.369  MSE/MemCast 0.558  MSE/best-non-LLM 0.476
+   Ridge-s     MSE    423.309  iid(218.8,689.6) block7(179.7,692.1)  MAE   13.279  MSE/MemCast 0.560  MSE/best-non-LLM 0.477
+   SameInfo    MSE    423.309  iid(220.5,689.1) block7(194.5,685.8)  MAE   13.279  MSE/MemCast 0.560  MSE/best-non-LLM 0.477
+== FR: test targets 2016-09-02 04:00:00 .. 2016-12-28 03:00:00 (30 windows, stride 96 h); train memory 476 windows; LEAR train 476; columns {'price': 'Prices', 'x1': 'Generation forecast', 'x2': 'System load forecast'}
+   SameInfo chose Ridge-s on training-only validation MSE {'LEAR-s': 11.411750912526722, 'Ridge-s': 11.274890017593636}
+   paper: MemCast MSE 756.981 MAE 12.142 | best non-LLM baseline in paper: TimeXer MSE 876.179 MAE 10.686
+   R-1         MSE    781.868  iid(482.8,1176.1) block7(422.7,1189.8)  MAE   20.448  MSE/MemCast 1.033  MSE/best-non-LLM 0.892
+   R-3         MSE    652.708  iid(376.2,998.7) block7(315.5,1041.3)  MAE   18.077  MSE/MemCast 0.862  MSE/best-non-LLM 0.745
+   R-5         MSE    563.923  iid(337.2,854.6) block7(278.2,873.0)  MAE   16.618  MSE/MemCast 0.745  MSE/best-non-LLM 0.644
+   R-10        MSE    556.793  iid(321.0,887.4) block7(278.9,882.4)  MAE   16.351  MSE/MemCast 0.736  MSE/best-non-LLM 0.635
+   R-3-online  MSE   1152.812  iid(334.3,2362.8) block7(234.5,2573.6)  MAE   16.920  MSE/MemCast 1.523  MSE/best-non-LLM 1.316
+   SN-1d       MSE    782.970  iid(113.8,2015.6) block7(108.7,2024.4)  MAE   10.106  MSE/MemCast 1.034  MSE/best-non-LLM 0.894
+   SN-7d       MSE   1176.081  iid(169.3,3032.4) block7(87.0,3073.7)  MAE   12.536  MSE/MemCast 1.554  MSE/best-non-LLM 1.342
+   LEAR-s      MSE    332.190  iid(207.2,487.4) block7(184.0,489.8)  MAE   12.603  MSE/MemCast 0.439  MSE/best-non-LLM 0.379
+   Ridge-s     MSE    335.776  iid(199.5,516.7) block7(171.3,523.7)  MAE   12.506  MSE/MemCast 0.444  MSE/best-non-LLM 0.383
+   SameInfo    MSE    335.776  iid(204.6,514.4) block7(170.4,520.6)  MAE   12.506  MSE/MemCast 0.444  MSE/best-non-LLM 0.383
+== DE: test targets 2017-09-02 04:00:00 .. 2017-12-28 03:00:00 (30 windows, stride 96 h); train memory 476 windows; LEAR train 476; columns {'price': 'Price', 'x1': 'Ampirion Load Forecast', 'x2': 'PV+Wind Forecast'}
+   SameInfo chose Ridge-s on training-only validation MSE {'LEAR-s': 21.30347165693731, 'Ridge-s': 20.308389748132935}
+   paper: MemCast MSE 210.445 MAE 9.195 | best non-LLM baseline in paper: PatchTST MSE 290.971 MAE 11.974
+   R-1         MSE    613.453  iid(375.0,906.1) block7(352.9,876.4)  MAE   17.973  MSE/MemCast 2.915  MSE/best-non-LLM 2.108
+   R-3         MSE    717.341  iid(409.4,1071.4) block7(365.8,1051.9)  MAE   19.110  MSE/MemCast 3.409  MSE/best-non-LLM 2.465
+   R-5         MSE    640.127  iid(370.0,989.4) block7(330.5,955.9)  MAE   17.792  MSE/MemCast 3.042  MSE/best-non-LLM 2.200
+   R-10        MSE    531.539  iid(286.4,875.9) block7(282.4,788.5)  MAE   16.324  MSE/MemCast 2.526  MSE/best-non-LLM 1.827
+   R-3-online  MSE    677.355  iid(370.8,1100.7) block7(360.8,1007.2)  MAE   18.564  MSE/MemCast 3.219  MSE/best-non-LLM 2.328
+   SN-1d       MSE    447.487  iid(223.4,733.5) block7(252.2,628.3)  MAE   14.601  MSE/MemCast 2.126  MSE/best-non-LLM 1.538
+   SN-7d       MSE    699.553  iid(293.5,1228.5) block7(256.3,1210.9)  MAE   17.404  MSE/MemCast 3.324  MSE/best-non-LLM 2.404
+   LEAR-s      MSE   1789.890  iid(1105.0,2682.5) block7(1172.2,2623.9)  MAE   27.362  MSE/MemCast 8.505  MSE/best-non-LLM 6.151
+   Ridge-s     MSE    427.365  iid(313.5,558.4) block7(348.5,511.5)  MAE   16.406  MSE/MemCast 2.031  MSE/best-non-LLM 1.469
+   SameInfo    MSE    427.365  iid(317.0,558.3) block7(354.4,514.1)  MAE   16.406  MSE/MemCast 2.031  MSE/best-non-LLM 1.469

@@ -13,10 +13,10 @@ Terms used below:
 
 ## Supplementary criteria: extending the uniform re-check to the five systems that the first-round criteria listed as "not covered"
 
-- Version: **v2**, 2026-11-18. Revised according to an independent review of v1 (the review of v1, items M1-M9 and S1-S15) and the decisions of the authors.
-- Revision record: v0 to v1 in the change log of v0/v1; v1 to v2 in the change log of v1/v2.
+- Version: **v2**, 2026-11-18. Revised after an internal review before the criteria were fixed, and after the decisions listed in Section 14.
+- Revision record: Section 13.
 - Original criteria: the uniform re-check criteria of the first round (`recheck/criteria_round1.md`), written 2026-11-16 16:48. **The original is not changed.**
-- Companion documents: the data pre-check of stage C; the report of the data pre-check (below "the report"); the review of v1 (below "the review").
+- Companion documents: the data pre-check of stage C; the report of the data pre-check (below "the report"); the internal review of the previous version (below "the review").
 - Basis: the feasibility assessment and `recheck/system_protocols.csv`; the literature verification notes, groups 2-4; the re-annotated system labels (`coding/`); the pre-check notes (section 0.1 and section 2.3) and the run instructions (R2 sentinel) of the first round (`recheck/round1/`); the final review, section 3; downloaded third-party files (read as text only, not executed).
 
 ### 0. Procedure (binding)
@@ -24,7 +24,7 @@ Terms used below:
 1. ~~Data pre-check~~: done (2026-11-18).
 2. ~~Reading of the paper tables~~: done. Text only; no ratio computed.
 3. ~~Fill in the items to be confirmed and record them in Section 13~~: done (v1).
-4. ~~Independent review~~: done, conclusion "usable after changes". v2 implements all 9 required changes and decides the 15 suggestions one by one (Section 13).
+4. ~~Internal review~~: done, conclusion "usable after changes". v2 implements all 9 required changes and decides the 15 suggestions one by one (Section 13).
 5. The substantive changes of v2 are confirmed (Section 14).
 6. Computation starts only once this document is complete (Section 12).
 7. Only afterwards are the round-2 script and the run instructions written (including the unit tests of the scorer in 5.11), followed by code review, smoke test, and the formal run, using the template of the previous round.
@@ -107,7 +107,7 @@ The input category is that of "the arm used", as for MoiraiAgent in the first-ro
 
 **5.1 RCRPS scoring (CiK, BNP).** Code text relied on: `compute_rcrps_with_hf_dataset.py` of the CiK repository (below "the HF script"). **It is rewritten from the text; the original code is not run.**
 
-1. **CRPS of a point forecast**: R1 and R2 are point forecasts, and their CRPS is |y - x|. The PWM estimator of the HF script has a zero denominator when the number of samples is n=1 (`:67`). Substituting n identical points into the PWM formula gives exactly |y - x| (checked in the review, section III.2).
+1. **CRPS of a point forecast**: R1 and R2 are point forecasts, and their CRPS is |y - x|. The PWM estimator of the HF script has a zero denominator when the number of samples is n=1 (`:67`). Substituting n identical points into the PWM formula gives exactly |y - x| (checked in the internal review).
 2. **`metric_scaling` is always taken directly from the field of the HF dataset and not recomputed.** `scaling_cache.py` is used only to understand its meaning: its scaling is computed over 25 seeds and cannot be reproduced from the 5 instances in HF.
 3. **Constraint term** (`:310-334`, `:405-412`):
    - the forecast is multiplied by `metric_scaling`; `constraint_min` and `constraint_max` are likewise multiplied by `metric_scaling` and used as they are;
@@ -427,39 +427,39 @@ The stopping rules do not change with the result. No system is excluded or inclu
 
 ### 13. Record of additions
 
-**13.1 v0 to v1 (2026-11-18, after the pre-check).** C1-C24 are in the change log of v0/v1. Their implementation in v2: the content of C1-C21 is kept and further fixed or changed by the items of 13.2; "Leaf not available" in C8 is kept; the unit note of C14 is kept with 5.6; the expectation "insufficient test" of C22 is rewritten into 2.2 and 7.5.
+**13.1 v0 to v1 (2026-11-18, after the pre-check).** C1-C24 are the changes of this first revision. Their implementation in v2: the content of C1-C21 is kept and further fixed or changed by the items of 13.2; "Leaf not available" in C8 is kept; the unit note of C14 is kept with 5.6; the expectation "insufficient test" of C22 is rewritten into 2.2 and 7.5.
 
-**13.2 v1 to v2 (2026-11-18, after the independent review).** "The review" means the review of v1.
+**13.2 v1 to v2 (2026-11-18, after the internal review).** "The review" means the internal review of the previous version.
 
 | # | Section | Change | Basis |
 |---|---|---|---|
-| D1 | 5.1-8, 7.4, 10, 14 | direction of the bias written on both sides: conservative for "match", favourable to the prediction of Section 7 | review comment on v1 |
-| D2 | 5.4, 6.3, 2.2, 3 | the source check of Nexus now judged passed, with the four criteria and the source text; not judged again later | review comment on v1 |
-| D3 | 5.1-2, 5.1-3, 5.1-4, structure check of 6.1 | `metric_scaling` taken directly from the HF field; denominator of the constraint terms and "three terms added"; RoI judged by "length > 0"; structure check adds RoI range and not covering all steps, strictly increasing timestamps, (name, seed) unique, count of finite constraint values | review comment on v1 |
-| D4 | 5.9 | anchor implementation fixed: endog as a numpy array; how `random_state` is passed (marked as our convention); the one allowed interface repair; failed instances recorded as 5; versions fixed; the baseline-consistency check on the first formal run; smoke test prints no aggregate; how post hoc corrections are reported; seed distribution as description | review comment on v1 |
-| D5 | 5.9, 11, 14 | `results_complete.csv` not read during execution; later use only after all results are written to disk, marked "post hoc", changing no baseline-consistency check, K, N_comb | review comment on v1 |
-| D6 | 7.5 | templates rewritten: no presupposed P1; cases K=0,1,2 and the three cases of K>=3; "passed the validity check"; wording for BNP and CompEvo; control class stated; bias stated; definition of r and threshold sentence | review comment on v1 |
-| D7 | 8 | abstract rule judged on the main version (with LSTPrompt); same category (any) for the three thresholds goes into the abstract; a different category of the other version is written together; two versions if CompEvo passes only through a P-type anchor | review comment on v1 |
-| D8 | 5.7 | CompEvo criteria changed from 4 to 7: strict equality, uniqueness of L, window stride, target column, forecast length 48, original scale, commit; fitting history of R2 equals L; P-type versions | review comment on v1 |
-| D9 | 5.12 | no rounding in threshold comparisons | review comment on v1 |
-| D10 | 5.2 | the reason for -1 now rests on the code, notes the typo on README line 88, cites the precedent of the first-round pre-check notes | review comment on v1 |
-| D11 | 5.2 | frequency-table sensitivity written as a full table | review comment on v1 |
-| D12 | 5.2 | no degeneration of R2 for short histories; sentinel and execution order | review comment on v1 |
-| D13 | 5.2 | formula of R1 for h > m | review comment on v1 |
-| D14 | 5.3, 6.1 | CiK rule changed to Direct Prompt (ours) only, value unchanged; disclosed that it was changed after reading the table | review comment on v1 |
-| D15 | 5.4 | main metric now cites the Nexus text | review comment on v1 |
-| D16 | 5.4 | tie-breaking order; per-column best as description; direction favourable to the system noted | review comment on v1 |
-| D17 | 1.4 | scope of the magnitude check | review comment on v1 |
-| D18 | 5.10 | sqrt(r) applies only to the original 8 systems, marked post hoc description | review comment on v1 |
-| D19 | 5.6 | S10 **not adopted**; the full-history sensitivity of N2F deleted instead (reason in 5.6) | review comment on v1 |
-| D20 | 5.6, 6.4 | parsing regex of N2F and the assertion "exactly 48 numbers each" | review comment on v1 |
-| D22 | 10 | diagnostics and the "control class" column added | review comment on v1 |
-| D23 | 2.3 | note on how fragile the 5% tolerance is | review comment on v1 |
-| D25 | 5.11 | unit tests of the scorer (synthetic data only) | review comment on v1 |
-| D26 | 2.4, 7.4 | "system value takes the most favourable cell" favours the prediction, listed among the biases | review comment on v1 |
+| D1 | 5.1-8, 7.4, 10, 14 | direction of the bias written on both sides: conservative for "match", favourable to the prediction of Section 7 | internal review before the criteria were fixed |
+| D2 | 5.4, 6.3, 2.2, 3 | the source check of Nexus now judged passed, with the four criteria and the source text; not judged again later | internal review before the criteria were fixed |
+| D3 | 5.1-2, 5.1-3, 5.1-4, structure check of 6.1 | `metric_scaling` taken directly from the HF field; denominator of the constraint terms and "three terms added"; RoI judged by "length > 0"; structure check adds RoI range and not covering all steps, strictly increasing timestamps, (name, seed) unique, count of finite constraint values | internal review before the criteria were fixed |
+| D4 | 5.9 | anchor implementation fixed: endog as a numpy array; how `random_state` is passed (marked as our convention); the one allowed interface repair; failed instances recorded as 5; versions fixed; the baseline-consistency check on the first formal run; smoke test prints no aggregate; how post hoc corrections are reported; seed distribution as description | internal review before the criteria were fixed |
+| D5 | 5.9, 11, 14 | `results_complete.csv` not read during execution; later use only after all results are written to disk, marked "post hoc", changing no baseline-consistency check, K, N_comb | internal review before the criteria were fixed |
+| D6 | 7.5 | templates rewritten: no presupposed P1; cases K=0,1,2 and the three cases of K>=3; "passed the validity check"; wording for BNP and CompEvo; control class stated; bias stated; definition of r and threshold sentence | internal review before the criteria were fixed |
+| D7 | 8 | abstract rule judged on the main version (with LSTPrompt); same category (any) for the three thresholds goes into the abstract; a different category of the other version is written together; two versions if CompEvo passes only through a P-type anchor | internal review before the criteria were fixed |
+| D8 | 5.7 | CompEvo criteria changed from 4 to 7: strict equality, uniqueness of L, window stride, target column, forecast length 48, original scale, commit; fitting history of R2 equals L; P-type versions | internal review before the criteria were fixed |
+| D9 | 5.12 | no rounding in threshold comparisons | internal review before the criteria were fixed |
+| D10 | 5.2 | the reason for -1 now rests on the code, notes the typo on README line 88, cites the precedent of the first-round pre-check notes | internal review before the criteria were fixed |
+| D11 | 5.2 | frequency-table sensitivity written as a full table | internal review before the criteria were fixed |
+| D12 | 5.2 | no degeneration of R2 for short histories; sentinel and execution order | internal review before the criteria were fixed |
+| D13 | 5.2 | formula of R1 for h > m | internal review before the criteria were fixed |
+| D14 | 5.3, 6.1 | CiK rule changed to Direct Prompt (ours) only, value unchanged; disclosed that it was changed after reading the table | internal review before the criteria were fixed |
+| D15 | 5.4 | main metric now cites the Nexus text | internal review before the criteria were fixed |
+| D16 | 5.4 | tie-breaking order; per-column best as description; direction favourable to the system noted | internal review before the criteria were fixed |
+| D17 | 1.4 | scope of the magnitude check | internal review before the criteria were fixed |
+| D18 | 5.10 | sqrt(r) applies only to the original 8 systems, marked post hoc description | internal review before the criteria were fixed |
+| D19 | 5.6 | S10 **not adopted**; the full-history sensitivity of N2F deleted instead (reason in 5.6) | internal review before the criteria were fixed |
+| D20 | 5.6, 6.4 | parsing regex of N2F and the assertion "exactly 48 numbers each" | internal review before the criteria were fixed |
+| D22 | 10 | diagnostics and the "control class" column added | internal review before the criteria were fixed |
+| D23 | 2.3 | note on how fragile the 5% tolerance is | internal review before the criteria were fixed |
+| D25 | 5.11 | unit tests of the scorer (synthetic data only) | internal review before the criteria were fixed |
+| D26 | 2.4, 7.4 | "system value takes the most favourable cell" favours the prediction, listed among the biases | internal review before the criteria were fixed |
 ### 14. Decisions and substantive changes
 
-**Six items of v0 confirmed on 2026-11-18**: (1) a separate set of criteria; (2) DLinear not accepted; (3) Nexus uses R3; (4) the combined reading goes into the abstract when it falls into one category; (5) single-point RCRPS stated in the main text; (6) BNP takes the minimum cell of the paper's method.
+**Six items confirmed before computing (2026-11-18)**: (1) a separate set of criteria; (2) DLinear not accepted; (3) Nexus uses R3; (4) the combined reading goes into the abstract when it falls into one category; (5) single-point RCRPS stated in the main text; (6) BNP takes the minimum cell of the paper's method.
 
 **Substantive changes of v2 relative to v1**:
 

@@ -32,6 +32,8 @@ Report scope (`report_scope`) has four levels: `main_result` (main evaluation), 
 | C5 domain-standard benchmark | 2: MemCast, CastFSR | 0 | **0 / 2** | 0 / 3 (boundary: JudgeCast) |
 | own no-LLM control (any) | 16 (C1, C2 or C3 applies) | 11: the same 11 as C2 | **11 / 16** | 8-12 / 16; over all 23 systems: 11 / 23 (8-12 / 23) |
 
+Note on C5: the paper's Table 2 reports 0 / 3 when JudgeCast is counted as applicable and 0 / 2 without it.
+
 By rule A6, seven systems are not applicable: LLMTime, LSTPrompt, Informed Forecasting, Context is Key, Time-R1, From News to Forecast, CompEvo. They prompt an LLM directly, fine-tune an LLM, or have candidates that are LLM outputs, so they have no deterministic component usable without the LLM. For these seven, the absence of an own no-LLM control follows from the architecture and is not an omission in the report.
 
 ### Report scope and computability (own no-LLM control (any), 11 reported)
@@ -69,7 +71,7 @@ Computability: 10 are `values+metric sufficient`. The 25.5% of TSOrchestra is `c
 
 **Boundary of C4.** The seasonal-naive row of TimeRSI is an external row of the public leaderboard and also the normalisation baseline. The authors did not add it as a control. Without it the count is 2 / 23. Nexus, KairosAgent and LLMTime use it (or the last value) only as a normalisation constant, which does not count as a control row.
 
-**Boundary of C5.** The dataset codes NP, PJM, BE, FR, DE in JudgeCast have the same names as the five markets of the electricity price benchmark, but their data source was not checked, so they are recorded as `yes_boundary`. The baseline tables of MemCast and CastFSR contain no LEAR (MemCast: "no time-series foundation models"; the baseline list in CastFSR 4.1.2 has no electricity-specific benchmark).
+**Boundary of C5.** The dataset codes NP, PJM, BE, FR, DE in JudgeCast have the same names as the five markets of the electricity price benchmark, and the paper states that benchmark as its data source (Section 4.1, arXiv v2). They are recorded as `yes_boundary`, and the count is given with and without JudgeCast. The baseline tables of MemCast and CastFSR contain no LEAR (MemCast: "no time-series foundation models"; the baseline list in CastFSR 4.1.2 has no electricity-specific benchmark).
 
 ## 4. Recount method
 

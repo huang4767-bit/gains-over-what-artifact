@@ -195,10 +195,10 @@ These items record where a single headline number hides a different result under
 - **From News to Forecast, Bitcoin.** The advantage with news is 0.27%, with rounding interval [0.00, 0.54] and `precision_insufficient = yes`, so the direction cannot be distinguished.
 - **From News to Forecast, Exchange.** The figure 3.7% uses 6.46 from Table 1 against the iTransformer value 0.671 in Table 3 (a cross-table comparison after unit conversion). Using Table 3 only, it is 0.65 against 0.671, Delta = 3.13%, rounding interval [2.31, 3.95], same band (`1to5`).
 
-## 6. Open items
+## 6. Coverage and extraction notes
 
-- The identity of the three unread candidates and the inclusion rule of the corpus are not recorded in this folder.
-- CastFSR values were re-fetched from the arXiv v3 HTML.
+- Corpus. Twenty-four systems of a 27-candidate list were read in full; the identity of the three unread candidates and the search terms of the list were not preserved (see `corpus.csv`).
+- CastFSR values were taken from the arXiv v3 HTML.
 - The values in TimeCopilot Figure 2, TSOrchestra Figure 2 and appendix Figure 4, and MoiraiAgent Figure 3 were not read. The expert pool and the Table 1 baseline set of TimEvolve overlap only in part.
-- The mapping from arms to datasets for MUSE-Bench was not extracted, so it is `unresolved` in the stratified tables and needs to be filled in after the re-annotation.
-- From LSTPrompt Table 1, only 6 of 12 rows were extracted. Of the 9 Time-MMD domains (KairosAgent), only 3 were extracted. Of 17 LLMs in Beyond Naive Prompting, only 8 were extracted. Nexus market domains and Time-R1 MAE have only derived percentages. These unextracted records are not added to the distributions.
+- MUSE-Bench. The reference label of the earlier coding is "S/M/N by arm" and the extraction does not map arms to datasets, so its 28 records appear as `unresolved` in the stratified tables above. In the paper they are assigned to the S arm of the final coding (Table 11 of MUSE-Bench), as listed in `PAPER_MAP.md`.
+- Extracted subsets. From LSTPrompt Table 1, 6 of 12 rows were extracted. Of the 9 Time-MMD domains (KairosAgent), 3 were extracted. Of 17 LLMs in Beyond Naive Prompting, 8 were extracted. Nexus market domains and Time-R1 MAE have only derived percentages. These records are not added to the distributions.

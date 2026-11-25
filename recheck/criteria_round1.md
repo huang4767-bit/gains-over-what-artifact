@@ -73,7 +73,7 @@ Let N be the number of systems that pass the baseline-consistency check (the sou
 
 - The results are also reported stratified by input category (category S (substantive) against categories M (metadata) and H (history only), with labels taken from the adjudicated results of the re-annotation), as description only, with no separate reading.
 - Threshold sensitivity: counts at r <= 1.00 and r <= 1.10 are also given. If the three thresholds fall into different categories, the wording is "close", with no direction.
-- Research groups: report how many independent research groups the systems that pass the baseline-consistency check come from. The systems of USTC are listed in a separate row of the results.
+- Research groups: report how many independent research groups the systems that pass the baseline-consistency check come from. The systems of one research group are listed in a separate row of the results.
 
 ### 7. What is not done and not said
 
